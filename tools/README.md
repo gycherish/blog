@@ -19,6 +19,9 @@ Copies notes from the Obsidian vault into the blog, translating Obsidian syntax:
 - `![[img|cap]]` → `![cap](img)`; referenced images are copied into
   `assets/img/notes/` (incremental — only what's referenced, never deletes others)
 - injects `media_subpath` so the theme resolves images
+- `[[doc]]` / `[[doc#heading]]` / `[[doc|alias]]` → a link to the blog post when
+  the referenced doc is published (`_posts/`); otherwise the citing note is
+  reported and skipped (publish the referenced doc to the blog first)
 - new notes → `_drafts/` (local `--drafts` preview only, not deployed);
   already-published notes (same basename in `_posts/`) → updated in place
 
