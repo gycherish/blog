@@ -30,3 +30,12 @@ _drafts/
 
 # pixi Python environment (pixi.lock is committed for reproducibility)
 .pixi/
+
+# WeChat tooling: credentials (.env), cached token, SVG->PNG cache, output md
+.env
+tools/.wechat-token.json
+tools/.wechat-cache/
+tools/wechat-out/
+tools/wechat-preview/
+
+__pycache__/

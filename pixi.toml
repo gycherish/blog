@@ -7,8 +7,12 @@ platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
 
 [dependencies]
 python = ">=3.11"
+requests = ">=2.34.2,<3"
+cairosvg = ">=2.9.0,<3"
 
 # Run via: pixi run sync --vault <vault> [-f keyword]   /   pixi run publish [keyword]
+# WeChat: pixi run wechat --vault <vault> -f <keyword> [--dry-run]
 [tasks]
 sync = "python tools/sync.py"
 publish = "python tools/publish.py"
+wechat = "python tools/wechat.py"
