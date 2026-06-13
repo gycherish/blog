@@ -1,7 +1,14 @@
 ---
 ---
 
-@use "main";
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
 
 /* Shrink the sidebar subtitle slightly so the full tech-stack line
    (AI / 存储 / 高性能通信 / 虚拟化) fits on a single row. */
