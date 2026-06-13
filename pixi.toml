@@ -1,0 +1,14 @@
+[workspace]
+name = "blog-tools"
+version = "0.1.0"
+description = "Cross-platform Python tooling for syncing Obsidian notes into the Chirpy blog"
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+
+[dependencies]
+python = ">=3.11"
+
+# Run via: pixi run sync --vault <vault> [-f keyword]   /   pixi run publish [keyword]
+[tasks]
+sync = "python tools/sync.py"
+publish = "python tools/publish.py"
