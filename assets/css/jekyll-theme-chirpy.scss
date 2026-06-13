@@ -1,0 +1,10 @@
+---
+---
+
+@use "main";
+
+/* Shrink the sidebar subtitle slightly so the full tech-stack line
+   (AI / 存储 / 高性能通信 / 虚拟化) fits on a single row. */
+#sidebar .site-subtitle {
+  font-size: 0.85rem;
+}
