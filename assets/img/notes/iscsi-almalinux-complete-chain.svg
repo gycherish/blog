@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">iSCSI Target 连接 Linux 和 Windows Initiator 的完整链路</title>
+  <desc id="desc">AlmaLinux Target 通过 iSCSI TCP 3260 暴露 10G LUN，Linux Initiator 登录后挂载为 /mnt/iscsi-lun0，Windows 10 Initiator 也能发现并连接同一 Target。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.card{fill:#fff;stroke:#d8e0ea;stroke-width:2}.target{fill:#fff4dc;stroke:#d2a13b;stroke-width:3}.linux{fill:#e8f2ff;stroke:#5594d2;stroke-width:3}.win{fill:#eaf7ef;stroke:#55a36b;stroke-width:3}.warn{fill:#fff1f0;stroke:#d94b4b;stroke-width:2}.h{font:700 32px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.t{font:700 22px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:16px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.mono{font:15px Consolas,"Microsoft YaHei",monospace;fill:#24324a}.small{font:14px "Microsoft YaHei",Arial,sans-serif;fill:#6b7788}.line{stroke:#63758a;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}.green{stroke:#55a36b}.blue{stroke:#5594d2}.dash{stroke-dasharray:9 8}
+    </style>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#5594d2"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#55a36b"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="h" x="600" y="58" text-anchor="middle">本次 iSCSI 实操的完整链路</text>
+
+  <rect class="target" x="70" y="150" width="345" height="360" rx="18"/>
+  <text class="t" x="242" y="194" text-anchor="middle">AlmaLinux 10.1 Target</text>
+  <text class="mono" x="112" y="236">IP: 192.168.1.115</text>
+  <text class="mono" x="112" y="268">Target IQN:</text>
+  <text class="mono" x="112" y="294">iqn.2026-06.lab.local:</text>
+  <text class="mono" x="112" y="318">alma-target01</text>
+
+  <rect class="card" x="105" y="350" width="275" height="112" rx="12"/>
+  <text class="s" x="242" y="382" text-anchor="middle">fileio backing store</text>
+  <text class="mono" x="128" y="412">alma135-lun0.img</text>
+  <text class="mono" x="128" y="438">LUN 0 · 10G</text>
+
+  <rect class="card" x="482" y="284" width="220" height="112" rx="16"/>
+  <text class="t" x="592" y="326" text-anchor="middle">iSCSI</text>
+  <text class="mono" x="528" y="357">TCP 3260</text>
+  <text class="small" x="592" y="382" text-anchor="middle">SCSI over TCP/IP</text>
+
+  <path class="line blue" d="M415 300 H482" marker-end="url(#arrowBlue)"/>
+  <path class="line blue" d="M702 318 C750 245 780 210 825 210" marker-end="url(#arrowBlue)"/>
+  <path class="line green" d="M702 362 C750 440 780 492 825 492" marker-end="url(#arrowGreen)"/>
+
+  <rect class="linux" x="830" y="112" width="310" height="250" rx="18"/>
+  <text class="t" x="985" y="154" text-anchor="middle">Linux Initiator</text>
+  <text class="s" x="985" y="182" text-anchor="middle">AlmaLinux 10.1</text>
+  <text class="mono" x="864" y="220">IP: 192.168.1.135</text>
+  <text class="mono" x="864" y="248">IQN: iqn.1994-05...</text>
+  <rect class="card" x="862" y="276" width="246" height="64" rx="10"/>
+  <text class="mono" x="886" y="303">/dev/sdb -> /dev/sdb1</text>
+  <text class="mono" x="886" y="326">/mnt/iscsi-lun0</text>
+
+  <rect class="win" x="830" y="432" width="310" height="170" rx="18"/>
+  <text class="t" x="985" y="474" text-anchor="middle">Windows 10 Initiator</text>
+  <text class="mono" x="864" y="512">IP: 192.168.1.152</text>
+  <text class="s" x="985" y="546" text-anchor="middle">可发现并连接 Target</text>
+  <text class="small" x="985" y="574" text-anchor="middle">本次只演示连接，不格式化写入</text>
+
+  <rect class="warn" x="110" y="575" width="650" height="82" rx="16"/>
+  <text class="t" x="435" y="607" text-anchor="middle">注意：同一个普通 LUN 不要多主机同时写入</text>
+  <text class="s" x="145" y="638">Linux 已用 XFS 挂载该 LUN，Windows 若再格式化或写入，会带来文件系统损坏风险。</text>
+</svg>
