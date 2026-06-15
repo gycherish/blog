@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">iSCSI 安全架构</title>
+  <desc id="desc">iSCSI 部署中使用存储 VLAN、访问控制、防火墙、CHAP 认证和 LUN 映射限制连接。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9fc}.h{font:700 34px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.t{font:600 23px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:17px "Microsoft YaHei",Arial,sans-serif;fill:#5c6a7c}.zone{fill:#eef7ff;stroke:#5b9bd5;stroke-width:3;stroke-dasharray:10 8}.box{fill:#fff;stroke:#d8e0ea;stroke-width:2}.guard{fill:#eaf7ef;stroke:#55a36b;stroke-width:3}.deny{fill:#fff1f0;stroke:#d94b4b;stroke-width:2}.line{stroke:#66778a;stroke-width:5;fill:none;stroke-linecap:round}.ok{stroke:#55a36b}.bad{stroke:#d94b4b;stroke-dasharray:8 8}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#66778a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <text class="h" x="600" y="64" text-anchor="middle">iSCSI 不该裸奔：把访问范围锁小</text>
+  <rect class="zone" x="270" y="120" width="790" height="450" rx="22"/>
+  <text class="t" x="665" y="158" text-anchor="middle">Storage VLAN / 存储专用网络</text>
+  <g transform="translate(80 245)">
+    <rect class="box" x="0" y="0" width="160" height="110" rx="16"/>
+    <text class="t" x="80" y="48" text-anchor="middle">授权主机</text>
+    <text class="s" x="80" y="78" text-anchor="middle">Initiator IQN</text>
+  </g>
+  <path class="line ok" d="M245 300 H355" marker-end="url(#arrow)"/>
+  <g transform="translate(365 245)">
+    <rect class="guard" x="0" y="0" width="170" height="110" rx="16"/>
+    <text class="t" x="85" y="48" text-anchor="middle">防火墙</text>
+    <text class="s" x="85" y="78" text-anchor="middle">只放行 3260</text>
+  </g>
+  <path class="line ok" d="M540 300 H650" marker-end="url(#arrow)"/>
+  <g transform="translate(660 245)">
+    <rect class="guard" x="0" y="0" width="170" height="110" rx="16"/>
+    <text class="t" x="85" y="48" text-anchor="middle">CHAP</text>
+    <text class="s" x="85" y="78" text-anchor="middle">账号密码认证</text>
+  </g>
+  <path class="line ok" d="M835 300 H945" marker-end="url(#arrow)"/>
+  <g transform="translate(955 216)">
+    <rect class="box" x="0" y="0" width="170" height="168" rx="16"/>
+    <text class="t" x="85" y="42" text-anchor="middle">Target</text>
+    <rect fill="#fff3d8" stroke="#d1a03b" stroke-width="2" x="32" y="74" width="106" height="34" rx="8"/>
+    <rect fill="#fff3d8" stroke="#d1a03b" stroke-width="2" x="32" y="120" width="106" height="34" rx="8"/>
+    <text class="s" x="85" y="97" text-anchor="middle">LUN A</text>
+    <text class="s" x="85" y="143" text-anchor="middle">LUN B</text>
+  </g>
+  <g transform="translate(80 430)">
+    <rect class="deny" x="0" y="0" width="160" height="88" rx="16"/>
+    <text class="t" x="80" y="38" text-anchor="middle">未知主机</text>
+    <text class="s" x="80" y="66" text-anchor="middle">拒绝访问</text>
+  </g>
+  <path class="line bad" d="M245 474 H360"/>
+  <text class="s" x="600" y="618" text-anchor="middle">隔离网络、限制端口、认证身份、按 IQN 映射 LUN，缺一项都不舒服</text>
+</svg>

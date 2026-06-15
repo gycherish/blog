@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Initiator、Target 和 LUN</title>
+  <desc id="desc">应用服务器作为 Initiator 经过以太网交换机连接到存储服务器 Target，Target 暴露多个 LUN。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9fc}.h{font:700 34px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.t{font:600 24px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:17px "Microsoft YaHei",Arial,sans-serif;fill:#5d6a7d}.box{fill:#fff;stroke:#d7e0ea;stroke-width:2}.server{fill:#e8f2ff;stroke:#4e94d8;stroke-width:3}.switch{fill:#eaf8ef;stroke:#52a36a;stroke-width:3}.lun{fill:#fff3d8;stroke:#d4a239;stroke-width:2}.line{stroke:#64758a;stroke-width:5;fill:none;stroke-linecap:round}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#64758a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <text class="h" x="600" y="66" text-anchor="middle">iSCSI 的三个核心对象</text>
+  <g transform="translate(90 170)">
+    <rect class="server" x="0" y="0" width="240" height="210" rx="18"/>
+    <rect fill="#fff" x="34" y="42" width="172" height="30" rx="6"/>
+    <rect fill="#fff" x="34" y="88" width="172" height="30" rx="6"/>
+    <rect fill="#fff" x="34" y="134" width="172" height="30" rx="6"/>
+    <text class="t" x="120" y="260" text-anchor="middle">Initiator</text>
+    <text class="s" x="120" y="292" text-anchor="middle">使用远程磁盘的客户端</text>
+  </g>
+  <path class="line" d="M350 274 H475" marker-end="url(#arrow)"/>
+  <g transform="translate(480 210)">
+    <rect class="switch" x="0" y="0" width="240" height="130" rx="18"/>
+    <circle fill="#fff" cx="58" cy="65" r="13"/>
+    <circle fill="#fff" cx="100" cy="65" r="13"/>
+    <circle fill="#fff" cx="142" cy="65" r="13"/>
+    <circle fill="#fff" cx="184" cy="65" r="13"/>
+    <text class="t" x="120" y="190" text-anchor="middle">Ethernet</text>
+    <text class="s" x="120" y="222" text-anchor="middle">TCP/IP 网络</text>
+  </g>
+  <path class="line" d="M725 274 H850" marker-end="url(#arrow)"/>
+  <g transform="translate(860 145)">
+    <rect class="server" x="0" y="0" width="250" height="260" rx="18"/>
+    <text class="t" x="125" y="46" text-anchor="middle">Target</text>
+    <text class="s" x="125" y="76" text-anchor="middle">提供远程块设备</text>
+    <rect class="lun" x="42" y="112" width="166" height="38" rx="8"/>
+    <rect class="lun" x="42" y="164" width="166" height="38" rx="8"/>
+    <rect class="lun" x="42" y="216" width="166" height="38" rx="8"/>
+    <text class="s" x="125" y="137" text-anchor="middle">LUN 1 · 100 GB</text>
+    <text class="s" x="125" y="189" text-anchor="middle">LUN 2 · 1 TB</text>
+    <text class="s" x="125" y="241" text-anchor="middle">LUN 3 · 4 TB</text>
+  </g>
+  <rect class="box" x="178" y="520" width="844" height="72" rx="14"/>
+  <text class="t" x="600" y="565" text-anchor="middle">LUN 最终会出现在客户端系统里，像一块“本地磁盘”</text>
+</svg>

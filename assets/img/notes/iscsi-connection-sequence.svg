@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">iSCSI 连接到出现新磁盘的流程</title>
+  <desc id="desc">从 Initiator 发现 Target、登录认证、Target 暴露 LUN，到操作系统注册新块设备并完成分区、格式化和挂载。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 34px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.lane{fill:#fff;stroke:#d8e0ea;stroke-width:2}.name{font:700 23px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.step{font:600 20px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.note{font:16px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.line{stroke:#63758a;stroke-width:4;fill:none;stroke-linecap:round}.reply{stroke:#4f9d69;stroke-width:4;fill:none;stroke-linecap:round;stroke-dasharray:8 8}.box{fill:#eef5ff;stroke:#5b9bd5;stroke-width:2}.ok{fill:#eaf7ef;stroke:#55a36b;stroke-width:2}.disk{fill:#fff3d8;stroke:#d2a13b;stroke-width:2}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#63758a"/>
+    </marker>
+    <marker id="arrowOk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#4f9d69"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <text class="h" x="600" y="62" text-anchor="middle">从配置完成到系统里出现新磁盘</text>
+
+  <rect class="lane" x="80" y="105" width="280" height="500" rx="18"/>
+  <rect class="lane" x="460" y="105" width="280" height="500" rx="18"/>
+  <rect class="lane" x="840" y="105" width="280" height="500" rx="18"/>
+  <text class="name" x="220" y="148" text-anchor="middle">Initiator 客户端</text>
+  <text class="name" x="600" y="148" text-anchor="middle">Target 存储端</text>
+  <text class="name" x="980" y="148" text-anchor="middle">操作系统</text>
+
+  <line x1="220" y1="175" x2="220" y2="565" stroke="#c7d1dd" stroke-width="3"/>
+  <line x1="600" y1="175" x2="600" y2="565" stroke="#c7d1dd" stroke-width="3"/>
+  <line x1="980" y1="175" x2="980" y2="565" stroke="#c7d1dd" stroke-width="3"/>
+
+  <rect class="box" x="112" y="194" width="216" height="54" rx="12"/>
+  <text class="step" x="220" y="228" text-anchor="middle">1. Discovery</text>
+  <path class="line" d="M330 221 H575" marker-end="url(#arrow)"/>
+  <text class="note" x="452" y="205" text-anchor="middle">发现可用 Target</text>
+
+  <rect class="ok" x="492" y="266" width="216" height="54" rx="12"/>
+  <text class="step" x="600" y="300" text-anchor="middle">2. 返回列表</text>
+  <path class="reply" d="M575 293 H245" marker-end="url(#arrowOk)"/>
+  <text class="note" x="410" y="278" text-anchor="middle">Target 信息</text>
+
+  <rect class="box" x="112" y="338" width="216" height="54" rx="12"/>
+  <text class="step" x="220" y="372" text-anchor="middle">3. Login</text>
+  <path class="line" d="M330 365 H575" marker-end="url(#arrow)"/>
+  <text class="note" x="452" y="349" text-anchor="middle">登录指定 Target</text>
+
+  <rect class="disk" x="492" y="410" width="216" height="54" rx="12"/>
+  <text class="step" x="600" y="444" text-anchor="middle">4. 暴露 LUN</text>
+  <path class="reply" d="M575 437 H245" marker-end="url(#arrowOk)"/>
+  <text class="note" x="410" y="422" text-anchor="middle">认证通过</text>
+
+  <rect class="box" x="112" y="482" width="216" height="54" rx="12"/>
+  <text class="step" x="220" y="516" text-anchor="middle">5. 注册块设备</text>
+  <path class="line" d="M330 509 H955" marker-end="url(#arrow)"/>
+
+  <rect class="disk" x="872" y="482" width="216" height="54" rx="12"/>
+  <text class="step" x="980" y="516" text-anchor="middle">6. 出现新磁盘</text>
+  <path class="line" d="M980 545 V585" marker-end="url(#arrow)"/>
+  <text class="note" x="980" y="622" text-anchor="middle">初始化、分区、格式化、挂载</text>
+</svg>

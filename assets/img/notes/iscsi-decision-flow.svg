@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1300 680" role="img" aria-labelledby="title desc">
+  <title id="title">是否应该使用 iSCSI 的决策流程</title>
+  <desc id="desc">根据是否共享文件夹、是否需要块设备、是否有稳定隔离内网，判断优先选择 SMB/NFS、考虑 iSCSI 或先改善网络安全设计。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 32px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.q{fill:#e8f2ff;stroke:#5594d2;stroke-width:2}.a{fill:#eaf7ef;stroke:#55a36b;stroke-width:2}.warn{fill:#fff3d8;stroke:#d2a13b;stroke-width:2}.t{font:600 20px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.label{font:600 16px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.line{stroke:#63758a;stroke-width:4;fill:none;stroke-linecap:round}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#63758a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1300" height="680"/>
+  <text class="h" x="600" y="58" text-anchor="middle">什么时候该考虑 iSCSI？</text>
+  <rect class="q" x="450" y="105" width="300" height="72" rx="16"/>
+  <text class="t" x="600" y="149" text-anchor="middle">你需要共享的是文件夹吗？</text>
+  <path class="line" d="M450 141 H310 V245" marker-end="url(#arrow)"/>
+  <text class="label" x="365" y="124" text-anchor="middle">是</text>
+  <rect class="a" x="145" y="250" width="260" height="72" rx="16"/>
+  <text class="t" x="275" y="294" text-anchor="middle">优先考虑 SMB / NFS</text>
+  <path class="line" d="M750 141 H890 V245" marker-end="url(#arrow)"/>
+  <text class="label" x="835" y="124" text-anchor="middle">不是</text>
+  <rect class="q" x="760" y="250" width="260" height="72" rx="16"/>
+  <text class="t" x="890" y="294" text-anchor="middle">你需要块设备吗？</text>
+  <path class="line" d="M760 286 H635 V390" marker-end="url(#arrow)"/>
+  <text class="label" x="698" y="272" text-anchor="middle">是</text>
+  <rect class="a" x="470" y="395" width="260" height="72" rx="16"/>
+  <text class="t" x="600" y="439" text-anchor="middle">考虑 iSCSI</text>
+  <path class="line" d="M1020 286 H1080 V390" marker-end="url(#arrow)"/>
+  <text class="label" x="1055" y="272" text-anchor="middle">不是</text>
+  <rect class="warn" x="950" y="395" width="260" height="72" rx="16"/>
+  <text class="t" x="1080" y="439" text-anchor="middle">重新确认存储需求</text>
+  <path class="line" d="M600 467 V520" marker-end="url(#arrow)"/>
+  <rect class="q" x="430" y="525" width="340" height="72" rx="16"/>
+  <text class="t" x="600" y="569" text-anchor="middle">有稳定、隔离的内网吗？</text>
+  <path class="line" d="M430 561 H300" marker-end="url(#arrow)"/>
+  <text class="label" x="365" y="545" text-anchor="middle">否</text>
+  <rect class="warn" x="85" y="525" width="210" height="72" rx="16"/>
+  <text class="t" x="190" y="556" text-anchor="middle">先改善网络</text>
+  <text class="t" x="190" y="582" text-anchor="middle">和安全设计</text>
+  <path class="line" d="M770 561 H900" marker-end="url(#arrow)"/>
+  <text class="label" x="835" y="545" text-anchor="middle">是</text>
+  <rect class="a" x="905" y="525" width="210" height="72" rx="16"/>
+  <text class="t" x="1010" y="569" text-anchor="middle">可以规划 iSCSI</text>
+</svg>

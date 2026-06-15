@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">虚拟化平台使用 iSCSI 共享存储</title>
+  <desc id="desc">多个 Hypervisor 通过存储交换机连接到 iSCSI 存储阵列，阵列后端是 SSD、HDD 和 RAID 存储池。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 32px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.group{fill:#fff;stroke:#d8e0ea;stroke-width:2}.host{fill:#e8f2ff;stroke:#5594d2;stroke-width:2}.switch{fill:#eaf7ef;stroke:#55a36b;stroke-width:3}.san{fill:#fff3d8;stroke:#d2a13b;stroke-width:3}.t{font:600 21px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:16px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.line{stroke:#63758a;stroke-width:4;fill:none;stroke-linecap:round}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#63758a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="620"/>
+  <text class="h" x="600" y="60" text-anchor="middle">虚拟化平台中的 iSCSI 共享存储</text>
+  <rect class="group" x="80" y="115" width="280" height="390" rx="18"/>
+  <text class="t" x="220" y="155" text-anchor="middle">计算节点</text>
+  <rect class="host" x="125" y="195" width="190" height="64" rx="12"/>
+  <rect class="host" x="125" y="285" width="190" height="64" rx="12"/>
+  <rect class="host" x="125" y="375" width="190" height="64" rx="12"/>
+  <text class="t" x="220" y="235" text-anchor="middle">Hypervisor 1</text>
+  <text class="t" x="220" y="325" text-anchor="middle">Hypervisor 2</text>
+  <text class="t" x="220" y="415" text-anchor="middle">Hypervisor 3</text>
+  <rect class="switch" x="495" y="250" width="210" height="120" rx="18"/>
+  <text class="t" x="600" y="302" text-anchor="middle">存储交换机</text>
+  <text class="s" x="600" y="332" text-anchor="middle">Storage Network</text>
+  <path class="line" d="M315 227 C405 227 405 285 490 285" marker-end="url(#arrow)"/>
+  <path class="line" d="M315 317 H490" marker-end="url(#arrow)"/>
+  <path class="line" d="M315 407 C405 407 405 345 490 345" marker-end="url(#arrow)"/>
+  <path class="line" d="M710 310 H820" marker-end="url(#arrow)"/>
+  <rect class="san" x="830" y="195" width="280" height="230" rx="18"/>
+  <text class="t" x="970" y="250" text-anchor="middle">iSCSI 存储阵列</text>
+  <rect fill="#fff" stroke="#d2a13b" stroke-width="2" x="880" y="300" width="180" height="58" rx="10"/>
+  <text class="t" x="970" y="337" text-anchor="middle">SSD / HDD / RAID</text>
+  <text class="s" x="970" y="385" text-anchor="middle">虚拟机磁盘或数据块集中存放</text>
+</svg>

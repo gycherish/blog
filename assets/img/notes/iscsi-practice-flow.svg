@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1300 520" role="img" aria-labelledby="title desc">
+  <title id="title">从远程 LUN 到本地磁盘的实践流程</title>
+  <desc id="desc">创建 LUN、创建 Target、授权 Initiator、客户端发现 Target、登录 Target、系统出现新磁盘并分区格式化挂载。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 32px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.box{fill:#fff;stroke:#d8e0ea;stroke-width:2}.storage{fill:#fff3d8;stroke:#d2a13b}.client{fill:#e8f2ff;stroke:#5594d2}.done{fill:#eaf7ef;stroke:#55a36b}.t{font:600 18px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:15px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.line{stroke:#63758a;stroke-width:4;fill:none;stroke-linecap:round}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#63758a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1300" height="520"/>
+  <text class="h" x="600" y="58" text-anchor="middle">极简实践流程：从远程 LUN 到本地磁盘</text>
+  <g transform="translate(85 170)">
+    <rect class="box storage" x="0" y="0" width="130" height="82" rx="14"/><text class="t" x="65" y="36" text-anchor="middle">创建</text><text class="s" x="65" y="60" text-anchor="middle">LUN</text>
+    <path class="line" d="M140 41 H180" marker-end="url(#arrow)"/>
+    <rect class="box storage" x="190" y="0" width="130" height="82" rx="14"/><text class="t" x="255" y="36" text-anchor="middle">创建</text><text class="s" x="255" y="60" text-anchor="middle">Target</text>
+    <path class="line" d="M330 41 H370" marker-end="url(#arrow)"/>
+    <rect class="box storage" x="380" y="0" width="140" height="82" rx="14"/><text class="t" x="450" y="36" text-anchor="middle">授权</text><text class="s" x="450" y="60" text-anchor="middle">Initiator</text>
+    <path class="line" d="M530 41 H570" marker-end="url(#arrow)"/>
+    <rect class="box client" x="580" y="0" width="150" height="82" rx="14"/><text class="t" x="655" y="36" text-anchor="middle">客户端发现</text><text class="s" x="655" y="60" text-anchor="middle">Target</text>
+    <path class="line" d="M740 41 H780" marker-end="url(#arrow)"/>
+    <rect class="box client" x="790" y="0" width="130" height="82" rx="14"/><text class="t" x="855" y="36" text-anchor="middle">登录</text><text class="s" x="855" y="60" text-anchor="middle">Target</text>
+    <path class="line" d="M930 41 H970" marker-end="url(#arrow)"/>
+    <rect class="box done" x="980" y="0" width="150" height="82" rx="14"/><text class="t" x="1055" y="36" text-anchor="middle">新磁盘</text><text class="s" x="1055" y="60" text-anchor="middle">分区 / 挂载</text>
+  </g>
+  <text class="s" x="260" y="315" text-anchor="middle">存储端准备资源和访问权限</text>
+  <text class="s" x="790" y="315" text-anchor="middle">客户端发现、登录并让系统识别磁盘</text>
+</svg>

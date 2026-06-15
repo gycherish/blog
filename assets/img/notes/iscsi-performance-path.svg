@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1300 520" role="img" aria-labelledby="title desc">
+  <title id="title">iSCSI 性能瓶颈链路</title>
+  <desc id="desc">iSCSI 性能受应用 I/O、客户端资源、网卡、交换机、存储端网卡、存储控制器和后端磁盘共同影响。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 32px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.box{fill:#fff;stroke:#d8e0ea;stroke-width:2}.hot{fill:#fff3d8;stroke:#d2a13b}.net{fill:#e8f2ff;stroke:#5594d2}.store{fill:#eaf7ef;stroke:#55a36b}.t{font:600 18px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:15px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.line{stroke:#63758a;stroke-width:4;fill:none;stroke-linecap:round}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#63758a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1300" height="520"/>
+  <text class="h" x="600" y="58" text-anchor="middle">性能不是只看协议，而是看整条路径</text>
+  <g transform="translate(50 174)">
+    <rect class="box hot" x="0" y="0" width="120" height="82" rx="14"/><text class="t" x="60" y="48" text-anchor="middle">应用 I/O</text>
+    <path class="line" d="M130 41 H170" marker-end="url(#arrow)"/>
+    <rect class="box" x="180" y="0" width="130" height="82" rx="14"/><text class="t" x="245" y="36" text-anchor="middle">客户端</text><text class="s" x="245" y="60" text-anchor="middle">CPU / 内存</text>
+    <path class="line" d="M320 41 H360" marker-end="url(#arrow)"/>
+    <rect class="box net" x="370" y="0" width="120" height="82" rx="14"/><text class="t" x="430" y="36" text-anchor="middle">客户端</text><text class="s" x="430" y="60" text-anchor="middle">网卡</text>
+    <path class="line" d="M500 41 H540" marker-end="url(#arrow)"/>
+    <rect class="box net" x="550" y="0" width="120" height="82" rx="14"/><text class="t" x="610" y="48" text-anchor="middle">交换机</text>
+    <path class="line" d="M680 41 H720" marker-end="url(#arrow)"/>
+    <rect class="box net" x="730" y="0" width="130" height="82" rx="14"/><text class="t" x="795" y="36" text-anchor="middle">存储端</text><text class="s" x="795" y="60" text-anchor="middle">网卡</text>
+    <path class="line" d="M870 41 H910" marker-end="url(#arrow)"/>
+    <rect class="box store" x="920" y="0" width="130" height="82" rx="14"/><text class="t" x="985" y="36" text-anchor="middle">存储</text><text class="s" x="985" y="60" text-anchor="middle">控制器</text>
+    <path class="line" d="M1060 41 H1100" marker-end="url(#arrow)"/>
+    <rect class="box hot" x="1110" y="0" width="120" height="82" rx="14"/><text class="t" x="1170" y="36" text-anchor="middle">SSD/HDD</text><text class="s" x="1170" y="60" text-anchor="middle">RAID</text>
+  </g>
+  <rect fill="#fff" stroke="#d8e0ea" stroke-width="2" x="240" y="340" width="720" height="68" rx="14"/>
+  <text class="t" x="600" y="382" text-anchor="middle">吞吐、IOPS、延迟都会被最弱的一环限制</text>
+</svg>

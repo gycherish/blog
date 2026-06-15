@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">文件级存储和块级存储对比</title>
+  <desc id="desc">左侧展示客户端通过 SMB 或 NFS 访问远程文件夹，右侧展示客户端操作系统通过 iSCSI 访问远程磁盘块设备。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9fc}.panel{fill:#fff;stroke:#d8e0ea;stroke-width:2}.h{font:700 34px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.t{font:600 24px "Microsoft YaHei",Arial,sans-serif;fill:#24324a}.s{font:18px "Microsoft YaHei",Arial,sans-serif;fill:#536173}.small{font:16px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.line{stroke:#6d7f96;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}.blue{fill:#dff0ff;stroke:#4d96d7}.green{fill:#e6f6e9;stroke:#4fa96a}.yellow{fill:#fff2cc;stroke:#c99a23}.accent{fill:#2f80ed}.ok{fill:#2d9b64}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6d7f96"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <text class="h" x="600" y="64" text-anchor="middle">SMB/NFS 给你文件，iSCSI 给你块设备</text>
+  <rect class="panel" x="70" y="110" width="500" height="500" rx="18"/>
+  <rect class="panel" x="630" y="110" width="500" height="500" rx="18"/>
+  <text class="t" x="320" y="162" text-anchor="middle">文件级存储</text>
+  <text class="s" x="320" y="194" text-anchor="middle">客户端看到的是远程目录和文件</text>
+  <text class="t" x="880" y="162" text-anchor="middle">块级存储</text>
+  <text class="s" x="880" y="194" text-anchor="middle">客户端看到的是一块可分区的磁盘</text>
+  <rect class="blue" x="142" y="254" width="130" height="88" rx="12"/>
+  <text class="t" x="207" y="305" text-anchor="middle">客户端</text>
+  <path class="line" d="M282 298 H374" marker-end="url(#arrow)"/>
+  <rect class="green" x="386" y="232" width="130" height="132" rx="12"/>
+  <text class="t" x="451" y="284" text-anchor="middle">共享</text>
+  <text class="t" x="451" y="316" text-anchor="middle">文件夹</text>
+  <rect class="yellow" x="226" y="424" width="72" height="58" rx="8"/>
+  <rect class="yellow" x="314" y="424" width="72" height="58" rx="8"/>
+  <rect class="yellow" x="402" y="424" width="72" height="58" rx="8"/>
+  <text class="small" x="262" y="458" text-anchor="middle">a.txt</text>
+  <text class="small" x="350" y="458" text-anchor="middle">b.jpg</text>
+  <text class="small" x="438" y="458" text-anchor="middle">data.db</text>
+  <text class="s" x="320" y="536" text-anchor="middle">协议：SMB / NFS</text>
+  <rect class="blue" x="702" y="254" width="150" height="88" rx="12"/>
+  <text class="t" x="777" y="290" text-anchor="middle">客户端</text>
+  <text class="s" x="777" y="318" text-anchor="middle">OS</text>
+  <path class="line" d="M862 298 H944" marker-end="url(#arrow)"/>
+  <rect class="green" x="956" y="232" width="130" height="132" rx="12"/>
+  <text class="t" x="1021" y="284" text-anchor="middle">远程</text>
+  <text class="t" x="1021" y="316" text-anchor="middle">块设备</text>
+  <rect x="724" y="424" width="316" height="58" rx="9" fill="#eef4ff" stroke="#7ca6dd" stroke-width="2"/>
+  <rect class="accent" x="724" y="424" width="62" height="58" rx="9"/>
+  <rect class="ok" x="786" y="424" width="86" height="58"/>
+  <rect fill="#f2b84b" x="872" y="424" width="116" height="58"/>
+  <rect fill="#8a74d6" x="988" y="424" width="52" height="58" rx="9"/>
+  <text class="small" x="882" y="536" text-anchor="middle">分区 / 文件系统 / 数据块</text>
+  <text class="s" x="880" y="570" text-anchor="middle">协议：iSCSI</text>
+</svg>

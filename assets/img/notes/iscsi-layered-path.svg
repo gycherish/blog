@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">iSCSI 分层链路</title>
+  <desc id="desc">应用写入经过文件系统、块设备层、iSCSI 发起端、TCP/IP 网络、目标端并到达存储池。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#d7e0ea;stroke-width:2}.h{font:700 34px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.t{font:600 24px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:17px "Microsoft YaHei",Arial,sans-serif;fill:#5a687c}.line{stroke:#62748b;stroke-width:4;fill:none;stroke-linecap:round}.app{fill:#e7f1ff}.net{fill:#eaf7ef}.disk{fill:#fff0d8}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#62748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text class="h" x="600" y="64" text-anchor="middle">一次写入，如何变成网络另一端的磁盘 I/O</text>
+  <g transform="translate(300 115)">
+    <rect class="box app" x="0" y="0" width="600" height="72" rx="14"/>
+    <text class="t" x="300" y="44" text-anchor="middle">应用程序写入文件</text>
+    <path class="line" d="M300 82v38" marker-end="url(#arrow)"/>
+    <rect class="box" x="0" y="130" width="600" height="72" rx="14"/>
+    <text class="t" x="300" y="174" text-anchor="middle">本地文件系统</text>
+    <path class="line" d="M300 212v38" marker-end="url(#arrow)"/>
+    <rect class="box" x="0" y="260" width="600" height="72" rx="14"/>
+    <text class="t" x="300" y="304" text-anchor="middle">块设备层生成 SCSI 命令</text>
+    <path class="line" d="M300 342v38" marker-end="url(#arrow)"/>
+    <rect class="box net" x="0" y="390" width="600" height="72" rx="14"/>
+    <text class="t" x="300" y="434" text-anchor="middle">iSCSI 封装进 TCP/IP</text>
+    <path class="line" d="M300 472v38" marker-end="url(#arrow)"/>
+    <rect class="box disk" x="0" y="520" width="600" height="72" rx="14"/>
+    <text class="t" x="300" y="564" text-anchor="middle">Target 执行命令并写入存储池</text>
+  </g>
+  <text class="s" x="150" y="376">本机视角：像一块普通磁盘</text>
+  <path class="line" d="M256 392 C220 470 246 560 330 618"/>
+  <text class="s" x="950" y="376" text-anchor="end">物理视角：数据实际穿过网络</text>
+  <path class="line" d="M888 392 C934 470 908 560 830 618"/>
+</svg>

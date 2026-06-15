@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1300 520" role="img" aria-labelledby="title desc">
+  <title id="title">应用写入 iSCSI 磁盘的实际链路</title>
+  <desc id="desc">应用写入 data.db 后，经本机文件系统、块设备、SCSI 命令、TCP/IP 封装、网络传输，最终写入远端存储。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 32px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.box{fill:#fff;stroke:#d8e0ea;stroke-width:2}.blue{fill:#e8f2ff;stroke:#5594d2}.green{fill:#eaf7ef;stroke:#55a36b}.gold{fill:#fff3d8;stroke:#d2a13b}.t{font:600 19px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:15px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.line{stroke:#63758a;stroke-width:4;fill:none;stroke-linecap:round}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#63758a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1300" height="520"/>
+  <text class="h" x="600" y="58" text-anchor="middle">应用写文件时，真正走的是块 I/O 链路</text>
+  <g transform="translate(55 170)">
+    <rect class="box blue" x="0" y="0" width="130" height="86" rx="14"/>
+    <text class="t" x="65" y="38" text-anchor="middle">应用写入</text>
+    <text class="s" x="65" y="62" text-anchor="middle">data.db</text>
+    <path class="line" d="M140 43 H190" marker-end="url(#arrow)"/>
+    <rect class="box" x="200" y="0" width="140" height="86" rx="14"/>
+    <text class="t" x="270" y="38" text-anchor="middle">本机</text>
+    <text class="t" x="270" y="64" text-anchor="middle">文件系统</text>
+    <path class="line" d="M350 43 H400" marker-end="url(#arrow)"/>
+    <rect class="box green" x="410" y="0" width="150" height="86" rx="14"/>
+    <text class="t" x="485" y="38" text-anchor="middle">块设备</text>
+    <text class="s" x="485" y="62" text-anchor="middle">/dev/sdb / 磁盘</text>
+    <path class="line" d="M570 43 H620" marker-end="url(#arrow)"/>
+    <rect class="box" x="630" y="0" width="130" height="86" rx="14"/>
+    <text class="t" x="695" y="38" text-anchor="middle">SCSI</text>
+    <text class="s" x="695" y="62" text-anchor="middle">写命令</text>
+    <path class="line" d="M770 43 H820" marker-end="url(#arrow)"/>
+    <rect class="box blue" x="830" y="0" width="130" height="86" rx="14"/>
+    <text class="t" x="895" y="38" text-anchor="middle">TCP/IP</text>
+    <text class="s" x="895" y="62" text-anchor="middle">网络传输</text>
+    <path class="line" d="M970 43 H1020" marker-end="url(#arrow)"/>
+    <rect class="box gold" x="1030" y="0" width="130" height="86" rx="14"/>
+    <text class="t" x="1095" y="38" text-anchor="middle">远端存储</text>
+    <text class="s" x="1095" y="62" text-anchor="middle">写入磁盘</text>
+  </g>
+  <rect fill="#fff" stroke="#d8e0ea" stroke-width="2" x="210" y="345" width="780" height="70" rx="14"/>
+  <text class="t" x="600" y="389" text-anchor="middle">本机文件系统管理的是块设备，不是远端文件夹</text>
+</svg>
