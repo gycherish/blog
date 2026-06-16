@@ -23,6 +23,7 @@ X11 转发是通过 SSH 隧道安全地传输 X11 图形界面数据的技术，
 
 ## X11 转发架构
 基于 SSH 的 X11 转发架构如下图所示：
+
 ![x11-arch](x11-arch.svg)
 
 其中 X Server 是 X11 的服务端，负责将客户端的图形化界面渲染出来；X Client 是 X11 的客户端，通过 X11 的协议将要渲染的图形化界面发给 X Server，由 X Server 负责渲染出来；X Server 和 X Client 的数据通过 SSH 通道加密传输。
@@ -103,17 +104,22 @@ ssh -Y root@192.168.3.5
 ```
 
 输入密码或使用了 SSH key 授权连接成功后，直接执行 xclock 命令将会在本机屏幕上显示一个时钟：
+
 ![x11-git-xclock](x11-git-xclock.png)
+
 #### 使用 Putty 发起 X11 转发
 Putty 和 Git 不同的是，其作为一款 SSH 客户端内部自带了 X11 授权的功能，因此不需要额外安装类似 xauth 这样的工具就可以直接发起 X11 转发功能。对于其他的 SSH 客户端，如 XShell，甚至自带了 XServer，这意味着使用 [XShell](https://www.netsarang.com/en/xshell/) 做 X11 转发时甚至都不需要额外下载安装 X Server。以下是使用 Putty 发起 X11 转发的步骤：
 
 打开 Putty，输入 X Client 的 IP 地址：
+
 ![x11-putty-1](x11-putty-1.png)
 
 设置 X11 转发：
+
 ![x11-putty-2](x11-putty-2.png)
 
 点击 Open 打开终端发起 SSH 连接，连接成功后，直接执行 xclock 命令将会在本机屏幕上显示一个时钟：
+
 ![x11-putty-3](x11-putty-3.png)
 
 ## X11 转发工作原理
@@ -200,6 +206,7 @@ tcp6       0      0 ::1:44044               ::1:6010                ESTABLISHED 
 
 ### 总结
 X11 转发时的进程关系如下：
+
 ![x11-process](x11-process.svg)
 
 ## 排错技巧

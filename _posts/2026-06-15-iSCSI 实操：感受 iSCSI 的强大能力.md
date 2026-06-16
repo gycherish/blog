@@ -592,6 +592,7 @@ Jun 15 23:19:51 dev-alma systemd[1]: Finished target.service - Restore LIO kerne
 5. 发现成功后会自动出现已发现的门户和对应的 Target:
 
 ![iSCSI 发现门户](win-iscsi-discover-port.png)
+
 ![iSCSI 发现目标](win-iscsi-discover-target.png)
 
 6. Win + R 输入 `diskmgmt.msc` 打开磁盘管理，先看下当前系统的磁盘：
