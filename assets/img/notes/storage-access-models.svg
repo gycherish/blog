@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">块、文件、对象三种存储访问模型</title>
+  <desc id="desc">对比块存储、文件存储和对象存储：客户端分别看到磁盘卷、目录文件和 Bucket Object Key。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 34px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.card{fill:#fff;stroke:#d8e0ea;stroke-width:2}.a{fill:#e8f2ff;stroke:#5594d2;stroke-width:3}.b{fill:#eaf7ef;stroke:#55a36b;stroke-width:3}.c{fill:#fff3d8;stroke:#d2a13b;stroke-width:3}.t{font:700 25px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:17px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.mono{font:16px Consolas,"Microsoft YaHei",monospace;fill:#24324a}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="h" x="600" y="60" text-anchor="middle">三种核心访问模型：块、文件、对象</text>
+  <rect class="card a" x="70" y="125" width="320" height="410" rx="18"/>
+  <rect class="card b" x="440" y="125" width="320" height="410" rx="18"/>
+  <rect class="card c" x="810" y="125" width="320" height="410" rx="18"/>
+  <text class="t" x="230" y="176" text-anchor="middle">块存储</text>
+  <text class="t" x="600" y="176" text-anchor="middle">文件存储</text>
+  <text class="t" x="970" y="176" text-anchor="middle">对象存储</text>
+  <text class="s" x="230" y="215" text-anchor="middle">客户端看到磁盘 / LUN / 卷</text>
+  <text class="s" x="600" y="215" text-anchor="middle">客户端看到目录和文件</text>
+  <text class="s" x="970" y="215" text-anchor="middle">客户端看到 Bucket / Object</text>
+  <rect fill="#fff" stroke="#b8c7da" x="130" y="260" width="200" height="74" rx="10"/>
+  <text class="mono" x="230" y="290" text-anchor="middle">/dev/sdb</text>
+  <text class="mono" x="230" y="315" text-anchor="middle">volume-01</text>
+  <rect fill="#fff" stroke="#b8c7da" x="500" y="260" width="200" height="74" rx="10"/>
+  <text class="mono" x="600" y="290" text-anchor="middle">/share/docs</text>
+  <text class="mono" x="600" y="315" text-anchor="middle">report.pdf</text>
+  <rect fill="#fff" stroke="#b8c7da" x="870" y="260" width="200" height="74" rx="10"/>
+  <text class="mono" x="970" y="290" text-anchor="middle">bucket/key</text>
+  <text class="mono" x="970" y="315" text-anchor="middle">metadata</text>
+  <text class="s" x="230" y="390" text-anchor="middle">典型协议：FC / iSCSI / NVMe-oF</text>
+  <text class="s" x="600" y="390" text-anchor="middle">典型协议：NFS / SMB</text>
+  <text class="s" x="970" y="390" text-anchor="middle">典型接口：S3 / Swift / CDMI</text>
+  <text class="s" x="230" y="445" text-anchor="middle">数据库、虚拟机、K8s PV</text>
+  <text class="s" x="600" y="445" text-anchor="middle">共享目录、AI 数据集、媒体</text>
+  <text class="s" x="970" y="445" text-anchor="middle">数据湖、归档、非结构化数据</text>
+</svg>

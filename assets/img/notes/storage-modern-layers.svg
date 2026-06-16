@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">现代存储分层体系</title>
+  <desc id="desc">从 HBM DRAM CXL Memory、NVMe SSD、QLC SSD HDD、对象存储到 LTO 磁带的多层存储体系。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 34px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.layer{stroke:#d8e0ea;stroke-width:2}.t{font:700 22px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:16px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.mono{font:15px Consolas,"Microsoft YaHei",monospace;fill:#24324a}.hot{fill:#ffe8e8}.perf{fill:#e8f2ff}.cap{fill:#eaf7ef}.cold{fill:#fff3d8}.arch{fill:#f2ecff}.axis{stroke:#63758a;stroke-width:4;fill:none;stroke-linecap:round}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#63758a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="h" x="600" y="58" text-anchor="middle">现代存储不是一层，而是分层数据供应链</text>
+  <path class="axis" d="M105 620 V125" marker-end="url(#arrow)"/>
+  <text class="s" x="105" y="650" text-anchor="middle">容量大 / 成本低</text>
+  <text class="s" x="105" y="105" text-anchor="middle">延迟低 / 成本高</text>
+  <g transform="translate(200 105)">
+    <rect class="layer hot" x="0" y="0" width="820" height="86" rx="14"/>
+    <text class="t" x="35" y="36">内存层</text><text class="mono" x="260" y="36">HBM / DRAM / CXL Memory</text><text class="s" x="260" y="64">GPU、CPU、推理 KV cache、极热数据</text>
+    <rect class="layer perf" x="0" y="105" width="820" height="86" rx="14"/>
+    <text class="t" x="35" y="141">性能层</text><text class="mono" x="260" y="141">NVMe SSD / NVMe-oF</text><text class="s" x="260" y="169">数据库、虚拟机、训练缓存、checkpoint 热路径</text>
+    <rect class="layer cap" x="0" y="210" width="820" height="86" rx="14"/>
+    <text class="t" x="35" y="246">容量层</text><text class="mono" x="260" y="246">QLC SSD / HDD / SMR / HAMR</text><text class="s" x="260" y="274">温数据、容量型集群、对象后端</text>
+    <rect class="layer cold" x="0" y="315" width="820" height="86" rx="14"/>
+    <text class="t" x="35" y="351">冷数据层</text><text class="mono" x="260" y="351">Object Storage / S3 / 数据湖仓</text><text class="s" x="260" y="379">备份、日志、训练源数据、跨区域复制</text>
+    <rect class="layer arch" x="0" y="420" width="820" height="86" rx="14"/>
+    <text class="t" x="35" y="456">归档层</text><text class="mono" x="260" y="456">LTO Tape / Offline Media</text><text class="s" x="260" y="484">长期保存、合规、空气隔离、低成本</text>
+  </g>
+</svg>

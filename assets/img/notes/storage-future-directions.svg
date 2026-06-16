@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">存储未来演进五条主线</title>
+  <desc id="desc">总结未来存储的五条主线：分层治理、高性能块存储、对象存储和湖仓、AI 数据路径、CXL 可组合基础设施。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 34px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.center{fill:#fff;stroke:#63758a;stroke-width:3}.card{fill:#fff;stroke:#d8e0ea;stroke-width:2}.a{fill:#e8f2ff}.b{fill:#eaf7ef}.c{fill:#fff3d8}.d{fill:#f2ecff}.e{fill:#ffe8e8}.t{font:700 21px "Microsoft YaHei",Arial,sans-serif;fill:#25324a}.s{font:15px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.line{stroke:#63758a;stroke-width:4;fill:none;stroke-linecap:round}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <text class="h" x="600" y="58" text-anchor="middle">未来演进方向：五条主线</text>
+  <circle class="center" cx="600" cy="340" r="92"/>
+  <text class="t" x="600" y="322" text-anchor="middle">存储</text>
+  <text class="t" x="600" y="352" text-anchor="middle">数据基础设施</text>
+  <text class="s" x="600" y="382" text-anchor="middle">容量 · 性能 · 治理</text>
+  <path class="line" d="M540 270 L350 170"/>
+  <path class="line" d="M660 270 L850 170"/>
+  <path class="line" d="M700 340 L930 340"/>
+  <path class="line" d="M660 410 L850 520"/>
+  <path class="line" d="M540 410 L350 520"/>
+  <rect class="card a" x="110" y="100" width="280" height="120" rx="16"/>
+  <text class="t" x="250" y="142" text-anchor="middle">分层与治理</text>
+  <text class="s" x="250" y="174" text-anchor="middle">生命周期、合规、冷热分层</text>
+  <rect class="card b" x="810" y="100" width="280" height="120" rx="16"/>
+  <text class="t" x="950" y="142" text-anchor="middle">高性能块存储</text>
+  <text class="s" x="950" y="174" text-anchor="middle">NVMe-oF、DPU、低延迟</text>
+  <rect class="card c" x="870" y="280" width="280" height="120" rx="16"/>
+  <text class="t" x="1010" y="322" text-anchor="middle">对象 + 湖仓</text>
+  <text class="s" x="1010" y="354" text-anchor="middle">S3、Iceberg、Delta、Hudi</text>
+  <rect class="card d" x="810" y="460" width="280" height="120" rx="16"/>
+  <text class="t" x="950" y="502" text-anchor="middle">AI 数据路径</text>
+  <text class="s" x="950" y="534" text-anchor="middle">并行 FS、GDS、checkpoint</text>
+  <rect class="card e" x="110" y="460" width="280" height="120" rx="16"/>
+  <text class="t" x="250" y="502" text-anchor="middle">CXL 与可组合</text>
+  <text class="s" x="250" y="534" text-anchor="middle">内存池化、KV cache 分层</text>
+</svg>

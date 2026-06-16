@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">存储发展大时间线</title>
+  <desc id="desc">从顺序介质、随机访问、单机增强、网络化存储、云与分布式存储、闪存与低延迟存储，到数据中心资源池化的演进时间线。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.h{font:700 34px "Microsoft YaHei",Arial,sans-serif;fill:#172033}.t{font:700 20px "Microsoft YaHei",Arial,sans-serif;fill:#24324a}.s{font:15px "Microsoft YaHei",Arial,sans-serif;fill:#617086}.box{fill:#fff;stroke:#d8e0ea;stroke-width:2}.a{fill:#fff3d8;stroke:#d2a13b}.b{fill:#e8f2ff;stroke:#5594d2}.c{fill:#eaf7ef;stroke:#55a36b}.d{fill:#f2ecff;stroke:#8a74d6}.line{stroke:#63758a;stroke-width:5;fill:none;stroke-linecap:round}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#63758a"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <text class="h" x="600" y="60" text-anchor="middle">存储发展的大时间线</text>
+  <path class="line" d="M105 334 H1095" marker-end="url(#arrow)"/>
+  <g transform="translate(70 145)">
+    <rect class="box a" x="0" y="0" width="150" height="118" rx="14"/>
+    <text class="t" x="75" y="34" text-anchor="middle">顺序介质</text>
+    <text class="s" x="75" y="64" text-anchor="middle">磁带 / 打孔卡</text>
+    <text class="s" x="75" y="92" text-anchor="middle">低成本保存</text>
+    <text class="s" x="75" y="245" text-anchor="middle">1950s 前后</text>
+  </g>
+  <g transform="translate(220 375)">
+    <rect class="box b" x="0" y="0" width="150" height="118" rx="14"/>
+    <text class="t" x="75" y="34" text-anchor="middle">随机访问</text>
+    <text class="s" x="75" y="64" text-anchor="middle">RAMAC / HDD</text>
+    <text class="s" x="75" y="92" text-anchor="middle">快速定位</text>
+    <text class="s" x="75" y="-42" text-anchor="middle">1956 起</text>
+  </g>
+  <g transform="translate(370 145)">
+    <rect class="box c" x="0" y="0" width="150" height="118" rx="14"/>
+    <text class="t" x="75" y="34" text-anchor="middle">单机增强</text>
+    <text class="s" x="75" y="64" text-anchor="middle">SCSI / RAID</text>
+    <text class="s" x="75" y="92" text-anchor="middle">可靠与性能</text>
+    <text class="s" x="75" y="245" text-anchor="middle">1970s-1990s</text>
+  </g>
+  <g transform="translate(520 375)">
+    <rect class="box d" x="0" y="0" width="150" height="118" rx="14"/>
+    <text class="t" x="75" y="34" text-anchor="middle">网络化</text>
+    <text class="s" x="75" y="64" text-anchor="middle">NAS / SAN</text>
+    <text class="s" x="75" y="92" text-anchor="middle">集中共享</text>
+    <text class="s" x="75" y="-42" text-anchor="middle">1990s-2000s</text>
+  </g>
+  <g transform="translate(670 145)">
+    <rect class="box a" x="0" y="0" width="150" height="118" rx="14"/>
+    <text class="t" x="75" y="34" text-anchor="middle">云与分布式</text>
+    <text class="s" x="75" y="64" text-anchor="middle">GFS / S3 / Ceph</text>
+    <text class="s" x="75" y="92" text-anchor="middle">海量扩展</text>
+    <text class="s" x="75" y="245" text-anchor="middle">2000s-2010s</text>
+  </g>
+  <g transform="translate(820 375)">
+    <rect class="box b" x="0" y="0" width="150" height="118" rx="14"/>
+    <text class="t" x="75" y="34" text-anchor="middle">低延迟</text>
+    <text class="s" x="75" y="64" text-anchor="middle">SSD / NVMe</text>
+    <text class="s" x="75" y="92" text-anchor="middle">协议重构</text>
+    <text class="s" x="75" y="-42" text-anchor="middle">2010s-2020s</text>
+  </g>
+  <g transform="translate(970 145)">
+    <rect class="box c" x="0" y="0" width="150" height="118" rx="14"/>
+    <text class="t" x="75" y="34" text-anchor="middle">资源池化</text>
+    <text class="s" x="75" y="64" text-anchor="middle">CXL / AI 存储</text>
+    <text class="s" x="75" y="92" text-anchor="middle">数据平台</text>
+    <text class="s" x="75" y="245" text-anchor="middle">2020s-现在</text>
+  </g>
+</svg>
