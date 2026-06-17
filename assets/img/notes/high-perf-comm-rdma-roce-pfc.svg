@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<style>text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}</style>
+<marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#f7f9fc"/>
+<text x="800" y="108" font-size="54" font-weight="700" fill="#172033" text-anchor="middle">RDMA / RoCE / PFC：性能来自哪里，麻烦又从哪里来</text>
+<text x="800" y="155" font-size="28" font-weight="400" fill="#5b6475" text-anchor="middle">Kernel bypass 和零拷贝降低 CPU 开销；传统 RoCE 又把“近似无损网络”变成工程难题</text>
+<rect x="85" y="230" width="450" height="490" rx="28" fill="#fff" stroke="#2563eb" stroke-width="3"/>
+<text x="310" y="295" font-size="34" font-weight="700" fill="#2563eb" text-anchor="middle">本地主机</text>
+<rect x="150" y="335" width="320" height="60" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+<text x="310" y="376" font-size="24" font-weight="400" fill="#172033" text-anchor="middle">应用 / 用户态缓冲区</text>
+<rect x="150" y="455" width="320" height="60" rx="14" fill="#fee2e2" stroke="#fecaca" stroke-width="2"/>
+<text x="310" y="496" font-size="24" font-weight="400" fill="#dc2626" text-anchor="middle">内核 TCP/IP 栈</text>
+<rect x="210" y="590" width="200" height="65" rx="16" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<text x="310" y="632" font-size="25" font-weight="400" fill="#fff" text-anchor="middle">RNIC / HCA</text>
+<line x1="310" y1="395" x2="310" y2="590" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<line x1="295" y1="455" x2="325" y2="515" stroke="#dc2626" stroke-width="4"/>
+<line x1="325" y1="455" x2="295" y2="515" stroke="#dc2626" stroke-width="4"/>
+<text x="310" y="555" font-size="18" font-weight="400" fill="#dc2626" text-anchor="middle">绕过内核</text>
+<rect x="1065" y="230" width="450" height="490" rx="28" fill="#fff" stroke="#7c3aed" stroke-width="3"/>
+<text x="1290" y="295" font-size="34" font-weight="700" fill="#7c3aed" text-anchor="middle">远端主机</text>
+<rect x="1130" y="335" width="320" height="60" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+<text x="1290" y="376" font-size="24" font-weight="400" fill="#172033" text-anchor="middle">应用 / 用户态缓冲区</text>
+<rect x="1130" y="455" width="320" height="60" rx="14" fill="#fee2e2" stroke="#fecaca" stroke-width="2"/>
+<text x="1290" y="496" font-size="24" font-weight="400" fill="#dc2626" text-anchor="middle">内核 TCP/IP 栈</text>
+<rect x="1190" y="590" width="200" height="65" rx="16" fill="#7c3aed" stroke="#7c3aed" stroke-width="2"/>
+<text x="1290" y="632" font-size="25" font-weight="400" fill="#fff" text-anchor="middle">RNIC / HCA</text>
+<line x1="1290" y1="395" x2="1290" y2="590" stroke="#7c3aed" stroke-width="5" marker-end="url(#arrow-purple)"/>
+<line x1="1275" y1="455" x2="1305" y2="515" stroke="#dc2626" stroke-width="4"/>
+<line x1="1305" y1="455" x2="1275" y2="515" stroke="#dc2626" stroke-width="4"/>
+<text x="1290" y="555" font-size="18" font-weight="400" fill="#dc2626" text-anchor="middle">绕过内核</text>
+<rect x="610" y="325" width="380" height="300" rx="40" fill="#eef2ff" stroke="#c4b5fd" stroke-width="3"/>
+<text x="800" y="388" font-size="34" font-weight="700" fill="#7c3aed" text-anchor="middle">以太网 Fabric</text>
+<text x="800" y="430" font-size="24" font-weight="400" fill="#172033" text-anchor="middle">RoCEv2: RDMA over UDP/IP</text>
+<text x="800" y="470" font-size="24" font-weight="400" fill="#ea580c" text-anchor="middle">PFC: priority pause</text>
+<text x="800" y="510" font-size="24" font-weight="400" fill="#059669" text-anchor="middle">ECN / DCQCN / HPCC / IRN</text>
+<line x1="410" y1="622" x2="610" y2="505" stroke="#2563eb" stroke-width="6" marker-end="url(#arrow-blue)"/>
+<line x1="990" y1="505" x2="1190" y2="622" stroke="#7c3aed" stroke-width="6" marker-end="url(#arrow-purple)"/>
+<line x1="970" y1="585" x2="625" y2="585" stroke="#ea580c" stroke-width="5" marker-end="url(#arrow-orange)"/>
+<text x="800" y="635" font-size="20" font-weight="400" fill="#ea580c" text-anchor="middle">拥塞时 pause 可能扩散</text>
+<rect x="130" y="756" width="380" height="94" rx="18" fill="#fff" stroke="#2563eb" stroke-width="3"/>
+<text x="154" y="803" font-size="27" font-weight="700" fill="#2563eb" text-anchor="start">性能收益</text>
+<text x="154" y="831" font-size="17" font-weight="400" fill="#5b6475" text-anchor="start">零拷贝 / kernel bypass / 远端内存访问</text>
+<rect x="610" y="756" width="380" height="94" rx="18" fill="#fff" stroke="#ea580c" stroke-width="3"/>
+<text x="634" y="803" font-size="27" font-weight="700" fill="#ea580c" text-anchor="start">工程代价</text>
+<text x="634" y="831" font-size="17" font-weight="400" fill="#5b6475" text-anchor="start">PFC 粒度粗 / 队头阻塞 / 拥塞扩散</text>
+<rect x="1090" y="756" width="380" height="94" rx="18" fill="#fff" stroke="#059669" stroke-width="3"/>
+<text x="1114" y="803" font-size="27" font-weight="700" fill="#059669" text-anchor="start">演进方向</text>
+<text x="1114" y="831" font-size="17" font-weight="400" fill="#5b6475" text-anchor="start">精细拥塞控制 / 选择性重传 / 逐包喷洒</text>
+</svg>

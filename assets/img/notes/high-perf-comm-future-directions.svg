@@ -1,0 +1,44 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<style>text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}</style>
+<marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#f7f9fc"/>
+<text x="800" y="108" font-size="54" font-weight="700" fill="#172033" text-anchor="middle">未来演进方向：为 AI 数据流重新设计网络</text>
+<text x="800" y="155" font-size="28" font-weight="400" fill="#5b6475" text-anchor="middle">开放标准、低延迟 scale-up、智能路由、光互联、存储/内存路径正在汇合</text>
+<circle cx="800" cy="470" r="120" fill="#111827" stroke="#111827" stroke-width="1"/>
+<text x="800" y="464" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">AI Data</text>
+<text x="800" y="504" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">Fabric</text>
+<text x="800" y="540" font-size="20" font-weight="400" fill="#cbd5e1" text-anchor="middle">通信 + 存储 + 内存</text>
+<line x1="690" y1="424" x2="510" y2="345" stroke="#059669" stroke-width="5" marker-end="url(#arrow-green)"/>
+<rect x="140" y="190" width="370" height="180" rx="24" fill="#fff" stroke="#059669" stroke-width="3"/>
+<text x="325" y="238" font-size="27" font-weight="700" fill="#059669" text-anchor="middle">开放 scale-out</text>
+<text x="325" y="288" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">UEC / UET</text>
+<text x="325" y="322" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">逐包喷洒 + CC</text>
+<line x1="800" y1="350" x2="800" y2="330" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<rect x="615" y="190" width="370" height="140" rx="24" fill="#fff" stroke="#2563eb" stroke-width="3"/>
+<text x="800" y="236" font-size="27" font-weight="700" fill="#2563eb" text-anchor="middle">扩大 scale-up 域</text>
+<text x="800" y="274" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">NVLink / UALink</text>
+<text x="800" y="304" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">机柜到 Pod</text>
+<line x1="910" y1="424" x2="1090" y2="345" stroke="#7c3aed" stroke-width="5" marker-end="url(#arrow-purple)"/>
+<rect x="1090" y="190" width="370" height="180" rx="24" fill="#fff" stroke="#7c3aed" stroke-width="3"/>
+<text x="1275" y="238" font-size="27" font-weight="700" fill="#7c3aed" text-anchor="middle">光互联</text>
+<text x="1275" y="288" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">CPO / OCS</text>
+<text x="1275" y="322" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">功耗与密度</text>
+<line x1="903" y1="531" x2="1005" y2="650" stroke="#ea580c" stroke-width="5" marker-end="url(#arrow-orange)"/>
+<rect x="1005" y="620" width="370" height="180" rx="24" fill="#fff" stroke="#ea580c" stroke-width="3"/>
+<text x="1190" y="668" font-size="27" font-weight="700" fill="#ea580c" text-anchor="middle">网内智能</text>
+<text x="1190" y="718" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">SHARP / INT</text>
+<text x="1190" y="752" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">归约与遥测</text>
+<line x1="697" y1="531" x2="595" y2="650" stroke="#0891b2" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<rect x="225" y="620" width="370" height="180" rx="24" fill="#fff" stroke="#0891b2" stroke-width="3"/>
+<text x="410" y="668" font-size="27" font-weight="700" fill="#0891b2" text-anchor="middle">数据路径融合</text>
+<text x="410" y="718" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">GPUDirect / NVMe-oF / CXL</text>
+<text x="410" y="752" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">喂饱 GPU</text>
+<rect x="350" y="805" width="900" height="55" rx="18" fill="#fff7ed" stroke="#fed7aa" stroke-width="2"/>
+<text x="800" y="840" font-size="24" font-weight="400" fill="#ea580c" text-anchor="middle">核心趋势：不是“谁替代谁”，而是按规模、延迟、成本、生态重新分层</text>
+</svg>

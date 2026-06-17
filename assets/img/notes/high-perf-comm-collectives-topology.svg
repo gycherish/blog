@@ -1,0 +1,103 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<style>text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}</style>
+<marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#f7f9fc"/>
+<text x="800" y="108" font-size="54" font-weight="700" fill="#172033" text-anchor="middle">集合通信与拓扑：AI 训练真正压垮网络的地方</text>
+<text x="800" y="155" font-size="28" font-weight="400" fill="#5b6475" text-anchor="middle">All-reduce / all-gather / reduce-scatter 让网络从“连通”走向“为流量模式优化”</text>
+<rect x="70" y="210" width="430" height="580" rx="24" fill="#fff" stroke="#2563eb" stroke-width="3"/>
+<text x="285.0" y="265" font-size="34" font-weight="700" fill="#2563eb" text-anchor="middle">Ring all-reduce</text>
+<rect x="585" y="210" width="430" height="580" rx="24" fill="#fff" stroke="#7c3aed" stroke-width="3"/>
+<text x="800.0" y="265" font-size="34" font-weight="700" fill="#7c3aed" text-anchor="middle">Tree all-reduce</text>
+<rect x="1100" y="210" width="430" height="580" rx="24" fill="#fff" stroke="#059669" stroke-width="3"/>
+<text x="1315.0" y="265" font-size="34" font-weight="700" fill="#059669" text-anchor="middle">Rail-optimized</text>
+<line x1="285.0" y1="335.0" x2="387.5304832720494" y2="377.4695167279506" stroke="#93c5fd" stroke-width="4"/>
+<line x1="387.5304832720494" y1="377.4695167279506" x2="430.0" y2="480.0" stroke="#93c5fd" stroke-width="4"/>
+<line x1="430.0" y1="480.0" x2="387.5304832720494" y2="582.5304832720494" stroke="#93c5fd" stroke-width="4"/>
+<line x1="387.5304832720494" y1="582.5304832720494" x2="285.0" y2="625.0" stroke="#93c5fd" stroke-width="4"/>
+<line x1="285.0" y1="625.0" x2="182.46951672795063" y2="582.5304832720494" stroke="#93c5fd" stroke-width="4"/>
+<line x1="182.46951672795063" y1="582.5304832720494" x2="140.0" y2="480.0" stroke="#93c5fd" stroke-width="4"/>
+<line x1="140.0" y1="480.0" x2="182.46951672795058" y2="377.46951672795063" stroke="#93c5fd" stroke-width="4"/>
+<line x1="182.46951672795058" y1="377.46951672795063" x2="285.0" y2="335.0" stroke="#93c5fd" stroke-width="4"/>
+<circle cx="285.0" cy="335.0" r="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="285.0" y="342.0" font-size="20" font-weight="400" fill="#2563eb" text-anchor="middle">0</text>
+<circle cx="387.5304832720494" cy="377.4695167279506" r="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="387.5304832720494" y="384.4695167279506" font-size="20" font-weight="400" fill="#2563eb" text-anchor="middle">1</text>
+<circle cx="430.0" cy="480.0" r="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="430.0" y="487.0" font-size="20" font-weight="400" fill="#2563eb" text-anchor="middle">2</text>
+<circle cx="387.5304832720494" cy="582.5304832720494" r="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="387.5304832720494" y="589.5304832720494" font-size="20" font-weight="400" fill="#2563eb" text-anchor="middle">3</text>
+<circle cx="285.0" cy="625.0" r="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="285.0" y="632.0" font-size="20" font-weight="400" fill="#2563eb" text-anchor="middle">4</text>
+<circle cx="182.46951672795063" cy="582.5304832720494" r="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="182.46951672795063" y="589.5304832720494" font-size="20" font-weight="400" fill="#2563eb" text-anchor="middle">5</text>
+<circle cx="140.0" cy="480.0" r="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="140.0" y="487.0" font-size="20" font-weight="400" fill="#2563eb" text-anchor="middle">6</text>
+<circle cx="182.46951672795058" cy="377.46951672795063" r="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="182.46951672795058" y="384.46951672795063" font-size="20" font-weight="400" fill="#2563eb" text-anchor="middle">7</text>
+<text x="285" y="705" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">链路利用率高</text>
+<text x="285" y="739" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">延迟随规模线性增长</text>
+<line x1="710" y1="455" x2="800" y2="335" stroke="#c4b5fd" stroke-width="4"/>
+<line x1="890" y1="455" x2="800" y2="335" stroke="#c4b5fd" stroke-width="4"/>
+<line x1="655" y1="595" x2="710" y2="455" stroke="#c4b5fd" stroke-width="4"/>
+<line x1="765" y1="595" x2="710" y2="455" stroke="#c4b5fd" stroke-width="4"/>
+<line x1="835" y1="595" x2="890" y2="455" stroke="#c4b5fd" stroke-width="4"/>
+<line x1="945" y1="595" x2="890" y2="455" stroke="#c4b5fd" stroke-width="4"/>
+<circle cx="800" cy="335" r="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="800" y="342" font-size="20" font-weight="400" fill="#7c3aed" text-anchor="middle">R</text>
+<circle cx="710" cy="455" r="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="710" y="462" font-size="20" font-weight="400" fill="#7c3aed" text-anchor="middle">S</text>
+<circle cx="890" cy="455" r="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="890" y="462" font-size="20" font-weight="400" fill="#7c3aed" text-anchor="middle">S</text>
+<circle cx="655" cy="595" r="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="655" y="602" font-size="20" font-weight="400" fill="#7c3aed" text-anchor="middle">G</text>
+<circle cx="765" cy="595" r="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="765" y="602" font-size="20" font-weight="400" fill="#7c3aed" text-anchor="middle">G</text>
+<circle cx="835" cy="595" r="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="835" y="602" font-size="20" font-weight="400" fill="#7c3aed" text-anchor="middle">G</text>
+<circle cx="945" cy="595" r="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="945" y="602" font-size="20" font-weight="400" fill="#7c3aed" text-anchor="middle">G</text>
+<text x="800" y="705" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">对数级层次汇聚</text>
+<text x="800" y="739" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">小消息或大规模更友好</text>
+<rect x="1145" y="335" width="70" height="45" rx="10" fill="#dcfce7" stroke="#059669" stroke-width="2"/>
+<text x="1180" y="363" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<rect x="1260" y="335" width="70" height="45" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="1295" y="363" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">NIC</text>
+<line x1="1215" y1="357" x2="1260" y2="357" stroke="#059669" stroke-width="3"/>
+<rect x="1145" y="425" width="70" height="45" rx="10" fill="#dcfce7" stroke="#059669" stroke-width="2"/>
+<text x="1180" y="453" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<rect x="1260" y="425" width="70" height="45" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="1295" y="453" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">NIC</text>
+<line x1="1215" y1="447" x2="1260" y2="447" stroke="#059669" stroke-width="3"/>
+<rect x="1145" y="515" width="70" height="45" rx="10" fill="#dcfce7" stroke="#059669" stroke-width="2"/>
+<text x="1180" y="543" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<rect x="1260" y="515" width="70" height="45" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="1295" y="543" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">NIC</text>
+<line x1="1215" y1="537" x2="1260" y2="537" stroke="#059669" stroke-width="3"/>
+<rect x="1145" y="605" width="70" height="45" rx="10" fill="#dcfce7" stroke="#059669" stroke-width="2"/>
+<text x="1180" y="633" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<rect x="1260" y="605" width="70" height="45" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="1295" y="633" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">NIC</text>
+<line x1="1215" y1="627" x2="1260" y2="627" stroke="#059669" stroke-width="3"/>
+<line x1="1330" y1="357" x2="1390" y2="500" stroke="#86efac" stroke-width="3"/>
+<line x1="1330" y1="447" x2="1470" y2="500" stroke="#86efac" stroke-width="3"/>
+<line x1="1330" y1="537" x2="1390" y2="500" stroke="#86efac" stroke-width="3"/>
+<line x1="1330" y1="627" x2="1470" y2="500" stroke="#86efac" stroke-width="3"/>
+<rect x="1348" y="350" width="84" height="300" rx="14" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1390" y="495" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Rail</text>
+<text x="1390" y="521" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Switch</text>
+<rect x="1428" y="350" width="84" height="300" rx="14" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1470" y="495" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Rail</text>
+<text x="1470" y="521" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Switch</text>
+<line x1="1330" y1="357" x2="1390" y2="500" stroke="#86efac" stroke-width="3"/>
+<line x1="1330" y1="447" x2="1470" y2="500" stroke="#86efac" stroke-width="3"/>
+<line x1="1330" y1="537" x2="1390" y2="500" stroke="#86efac" stroke-width="3"/>
+<line x1="1330" y1="627" x2="1470" y2="500" stroke="#86efac" stroke-width="3"/>
+<text x="1315" y="735" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">同 rail 一跳直达</text>
+<text x="1315" y="769" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">跨 rail 由机内互联配合</text>
+</svg>

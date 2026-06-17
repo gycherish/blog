@@ -1,0 +1,112 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<style>text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}</style>
+<marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#f7f9fc"/>
+<text x="800" y="108" font-size="54" font-weight="700" fill="#172033" text-anchor="middle">AI 网络的两个战场：scale-up 与 scale-out</text>
+<text x="800" y="155" font-size="28" font-weight="400" fill="#5b6475" text-anchor="middle">机柜内把 GPU 连成“大 GPU”；跨机柜把 GPU 集群连成训练 fabric</text>
+<rect x="70" y="190" width="690" height="600" rx="28" fill="#fff" stroke="#bfdbfe" stroke-width="3"/>
+<rect x="840" y="190" width="690" height="600" rx="28" fill="#fff" stroke="#bbf7d0" stroke-width="3"/>
+<text x="415" y="260" font-size="34" font-weight="700" fill="#2563eb" text-anchor="middle">scale-up：机柜内 / Pod 内</text>
+<text x="1185" y="260" font-size="34" font-weight="700" fill="#059669" text-anchor="middle">scale-out：跨机柜 / 集群级</text>
+<rect x="200" y="310" width="430" height="360" rx="18" fill="#f8fafc" stroke="#2563eb" stroke-width="3"/>
+<text x="415" y="358" font-size="28" font-weight="700" fill="#172033" text-anchor="middle">NVLink / NVSwitch / UALink</text>
+<rect x="245" y="400" width="62" height="52" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="276" y="433" font-size="17" font-weight="400" fill="#2563eb" text-anchor="middle">GPU</text>
+<line x1="276" y1="426" x2="415" y2="535" stroke="#60a5fa" stroke-width="3"/>
+<rect x="335" y="400" width="62" height="52" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="366" y="433" font-size="17" font-weight="400" fill="#2563eb" text-anchor="middle">GPU</text>
+<line x1="366" y1="426" x2="415" y2="535" stroke="#60a5fa" stroke-width="3"/>
+<rect x="425" y="400" width="62" height="52" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="456" y="433" font-size="17" font-weight="400" fill="#2563eb" text-anchor="middle">GPU</text>
+<line x1="456" y1="426" x2="415" y2="535" stroke="#60a5fa" stroke-width="3"/>
+<rect x="515" y="400" width="62" height="52" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="546" y="433" font-size="17" font-weight="400" fill="#2563eb" text-anchor="middle">GPU</text>
+<line x1="546" y1="426" x2="415" y2="535" stroke="#60a5fa" stroke-width="3"/>
+<rect x="245" y="495" width="62" height="52" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="276" y="528" font-size="17" font-weight="400" fill="#2563eb" text-anchor="middle">GPU</text>
+<line x1="276" y1="521" x2="415" y2="535" stroke="#60a5fa" stroke-width="3"/>
+<rect x="335" y="495" width="62" height="52" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="366" y="528" font-size="17" font-weight="400" fill="#2563eb" text-anchor="middle">GPU</text>
+<line x1="366" y1="521" x2="415" y2="535" stroke="#60a5fa" stroke-width="3"/>
+<rect x="425" y="495" width="62" height="52" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="456" y="528" font-size="17" font-weight="400" fill="#2563eb" text-anchor="middle">GPU</text>
+<line x1="456" y1="521" x2="415" y2="535" stroke="#60a5fa" stroke-width="3"/>
+<rect x="515" y="495" width="62" height="52" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="546" y="528" font-size="17" font-weight="400" fill="#2563eb" text-anchor="middle">GPU</text>
+<line x1="546" y1="521" x2="415" y2="535" stroke="#60a5fa" stroke-width="3"/>
+<rect x="340" y="505" width="150" height="60" rx="16" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<text x="415" y="542" font-size="20" font-weight="400" fill="#fff" text-anchor="middle">NVSwitch</text>
+<text x="415" y="720" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">目标：更像一个大 GPU</text>
+<text x="415" y="754" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">高带宽、低延迟、共享内存语义</text>
+<rect x="950" y="315" width="120" height="50" rx="12" fill="#dcfce7" stroke="#059669" stroke-width="2"/>
+<text x="1010" y="347" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Spine</text>
+<rect x="1125" y="315" width="120" height="50" rx="12" fill="#dcfce7" stroke="#059669" stroke-width="2"/>
+<text x="1185" y="347" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Spine</text>
+<rect x="1300" y="315" width="120" height="50" rx="12" fill="#dcfce7" stroke="#059669" stroke-width="2"/>
+<text x="1360" y="347" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Spine</text>
+<rect x="882" y="500" width="96" height="48" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="930" y="531" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Leaf</text>
+<line x1="930" y1="500" x2="1010" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="930" y1="500" x2="1185" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="930" y1="500" x2="1360" y2="365" stroke="#86efac" stroke-width="2"/>
+<rect x="882" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="906" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="906" y1="625" x2="930" y2="548" stroke="#86efac" stroke-width="2"/>
+<rect x="930" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="954" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="954" y1="625" x2="930" y2="548" stroke="#86efac" stroke-width="2"/>
+<rect x="1012" y="500" width="96" height="48" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="1060" y="531" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Leaf</text>
+<line x1="1060" y1="500" x2="1010" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="1060" y1="500" x2="1185" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="1060" y1="500" x2="1360" y2="365" stroke="#86efac" stroke-width="2"/>
+<rect x="1012" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1036" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="1036" y1="625" x2="1060" y2="548" stroke="#86efac" stroke-width="2"/>
+<rect x="1060" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1084" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="1084" y1="625" x2="1060" y2="548" stroke="#86efac" stroke-width="2"/>
+<rect x="1142" y="500" width="96" height="48" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="1190" y="531" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Leaf</text>
+<line x1="1190" y1="500" x2="1010" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="1190" y1="500" x2="1185" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="1190" y1="500" x2="1360" y2="365" stroke="#86efac" stroke-width="2"/>
+<rect x="1142" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1166" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="1166" y1="625" x2="1190" y2="548" stroke="#86efac" stroke-width="2"/>
+<rect x="1190" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1214" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="1214" y1="625" x2="1190" y2="548" stroke="#86efac" stroke-width="2"/>
+<rect x="1272" y="500" width="96" height="48" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="1320" y="531" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Leaf</text>
+<line x1="1320" y1="500" x2="1010" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="1320" y1="500" x2="1185" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="1320" y1="500" x2="1360" y2="365" stroke="#86efac" stroke-width="2"/>
+<rect x="1272" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1296" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="1296" y1="625" x2="1320" y2="548" stroke="#86efac" stroke-width="2"/>
+<rect x="1320" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1344" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="1344" y1="625" x2="1320" y2="548" stroke="#86efac" stroke-width="2"/>
+<rect x="1402" y="500" width="96" height="48" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="1450" y="531" font-size="20" font-weight="400" fill="#059669" text-anchor="middle">Leaf</text>
+<line x1="1450" y1="500" x2="1010" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="1450" y1="500" x2="1185" y2="365" stroke="#86efac" stroke-width="2"/>
+<line x1="1450" y1="500" x2="1360" y2="365" stroke="#86efac" stroke-width="2"/>
+<rect x="1402" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1426" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="1426" y1="625" x2="1450" y2="548" stroke="#86efac" stroke-width="2"/>
+<rect x="1450" y="625" width="48" height="45" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="2"/>
+<text x="1474" y="653" font-size="17" font-weight="400" fill="#059669" text-anchor="middle">GPU</text>
+<line x1="1474" y1="625" x2="1450" y2="548" stroke="#86efac" stroke-width="2"/>
+<text x="1185" y="720" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">InfiniBand / RoCE / UEC</text>
+<text x="1185" y="754" font-size="24" font-weight="400" fill="#5b6475" text-anchor="middle">目标：万卡级集合通信稳定扩展</text>
+<line x1="760" y1="490" x2="840" y2="490" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow-muted)"/>
+<text x="800" y="475" font-size="20" font-weight="400" fill="#5b6475" text-anchor="middle">跨节点</text>
+</svg>
