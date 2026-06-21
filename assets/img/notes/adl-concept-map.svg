@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<style>text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}</style>
+<marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#f7f9fc"/>
+
+<text x="800" y="108" font-size="54" font-weight="700" fill="#172033" text-anchor="middle">ADL：让函数查找跟着参数走</text>
+<text x="800" y="155" font-size="28" font-weight="400" fill="#5b6475" text-anchor="middle">Argument-Dependent Lookup</text>
+
+<rect x="605" y="335" width="390" height="165" rx="30" fill="#111827" stroke="#111827" stroke-width="1"/>
+<text x="800" y="400" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">f(args...)</text>
+<text x="800" y="445" font-size="24" font-weight="400" fill="#cbd5e1" text-anchor="middle">非限定函数调用</text>
+
+<circle cx="350" cy="270" r="115" fill="#eff6ff" stroke="#2563eb" stroke-width="4"/>
+<circle cx="350" cy="270" r="70" fill="#dbeafe" stroke="#93c5fd" stroke-width="3"/>
+<text x="350" y="262" font-size="28" font-weight="700" fill="#2563eb" text-anchor="middle">当前</text>
+<text x="350" y="300" font-size="28" font-weight="700" fill="#2563eb" text-anchor="middle">作用域</text>
+
+<circle cx="1250" cy="270" r="115" fill="#ecfdf5" stroke="#059669" stroke-width="4"/>
+<circle cx="1250" cy="270" r="70" fill="#dcfce7" stroke="#86efac" stroke-width="3"/>
+<text x="1250" y="262" font-size="28" font-weight="700" fill="#059669" text-anchor="middle">关联</text>
+<text x="1250" y="300" font-size="28" font-weight="700" fill="#059669" text-anchor="middle">命名空间</text>
+
+<rect x="175" y="540" width="350" height="145" rx="24" fill="#fff" stroke="#2563eb" stroke-width="3"/>
+<text x="350" y="600" font-size="28" font-weight="700" fill="#2563eb" text-anchor="middle">普通查找</text>
+<text x="350" y="640" font-size="22" font-weight="400" fill="#5b6475" text-anchor="middle">unqualified lookup</text>
+
+<rect x="1075" y="540" width="350" height="145" rx="24" fill="#fff" stroke="#059669" stroke-width="3"/>
+<text x="1250" y="600" font-size="28" font-weight="700" fill="#059669" text-anchor="middle">参数依赖查找</text>
+<text x="1250" y="640" font-size="22" font-weight="400" fill="#5b6475" text-anchor="middle">ADL / Koenig lookup</text>
+
+<rect x="625" y="640" width="350" height="145" rx="24" fill="#fff" stroke="#ea580c" stroke-width="3"/>
+<text x="800" y="700" font-size="28" font-weight="700" fill="#ea580c" text-anchor="middle">候选函数集</text>
+<text x="800" y="740" font-size="22" font-weight="400" fill="#5b6475" text-anchor="middle">overload set</text>
+
+<line x1="430" y1="320" x2="605" y2="382" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<line x1="1170" y1="320" x2="995" y2="382" stroke="#059669" stroke-width="5" marker-end="url(#arrow-green)"/>
+<line x1="800" y1="500" x2="800" y2="640" stroke="#ea580c" stroke-width="5" marker-end="url(#arrow-orange)"/>
+
+<line x1="350" y1="385" x2="350" y2="540" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<line x1="1250" y1="385" x2="1250" y2="540" stroke="#059669" stroke-width="5" marker-end="url(#arrow-green)"/>
+<line x1="525" y1="612" x2="625" y2="700" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<line x1="1075" y1="612" x2="975" y2="700" stroke="#059669" stroke-width="5" marker-end="url(#arrow-green)"/>
+
+<g>
+<circle cx="690" cy="570" r="22" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<circle cx="750" cy="555" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<circle cx="810" cy="570" r="22" fill="#dcfce7" stroke="#059669" stroke-width="3"/>
+<circle cx="870" cy="555" r="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+<circle cx="930" cy="570" r="22" fill="#ffedd5" stroke="#ea580c" stroke-width="3"/>
+</g>
+
+<rect x="610" y="215" width="380" height="64" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="800" y="257" font-size="24" font-weight="400" fill="#172033" text-anchor="middle">参数类型决定额外搜索半径</text>
+
+<rect x="605" y="815" width="390" height="48" rx="18" fill="#fff7ed" stroke="#fed7aa" stroke-width="2"/>
+<text x="800" y="847" font-size="22" font-weight="400" fill="#ea580c" text-anchor="middle">最后仍由重载决议拍板</text>
+
+<path d="M535 220 C610 175 710 175 780 214" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow-muted)"/>
+<path d="M1065 220 C990 175 890 175 820 214" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow-muted)"/>
+</svg>
