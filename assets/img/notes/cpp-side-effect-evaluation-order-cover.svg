@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      text {
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+        letter-spacing: 0;
+      }
+      .title { font-size: 54px; font-weight: 700; fill: #172033; }
+      .subtitle { font-size: 28px; fill: #5b6475; }
+      .panel-title { font-size: 30px; font-weight: 700; }
+      .body { font-size: 23px; fill: #5b6475; }
+      .small { font-size: 19px; fill: #64748b; }
+      .code { font-family: "Cascadia Code", Consolas, "Courier New", monospace; }
+    </style>
+    <filter id="shadow" x="-10%" y="-15%" width="120%" height="135%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L11,4 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L11,4 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L11,4 z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L11,4 z" fill="#ea580c"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L11,4 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+
+  <text x="800" y="108" text-anchor="middle" class="title">i = i++ 到底等于几</text>
+  <text x="800" y="155" text-anchor="middle" class="subtitle">C++ 副作用与求值顺序：值先算出来，状态稍后改变</text>
+
+  <rect x="560" y="235" width="480" height="230" rx="34" fill="#111827" stroke="#111827" stroke-width="1" filter="url(#shadow)"/>
+  <text x="800" y="320" text-anchor="middle" class="code" font-size="48" font-weight="700" fill="#ffffff">int i = 0;</text>
+  <text x="800" y="385" text-anchor="middle" class="code" font-size="58" font-weight="700" fill="#93c5fd">i = i++;</text>
+
+  <rect x="95" y="255" width="365" height="185" rx="26" fill="#ffffff" stroke="#2563eb" stroke-width="3" filter="url(#shadow)"/>
+  <text x="277" y="312" text-anchor="middle" class="panel-title" fill="#2563eb">值计算</text>
+  <text x="277" y="360" text-anchor="middle" class="code" font-size="30" font-weight="700" fill="#172033">i++ 产生旧值 0</text>
+  <text x="277" y="400" text-anchor="middle" class="body">表达式先拿到一个结果</text>
+
+  <rect x="1140" y="255" width="365" height="185" rx="26" fill="#ffffff" stroke="#ea580c" stroke-width="3" filter="url(#shadow)"/>
+  <text x="1322" y="312" text-anchor="middle" class="panel-title" fill="#ea580c">副作用</text>
+  <text x="1322" y="360" text-anchor="middle" class="code" font-size="30" font-weight="700" fill="#172033">i 被自增为 1</text>
+  <text x="1322" y="400" text-anchor="middle" class="body">对象状态真的发生变化</text>
+
+  <path d="M460 350 C505 350 520 350 560 350" fill="none" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+  <path d="M1040 350 C1085 350 1100 350 1140 350" fill="none" stroke="#ea580c" stroke-width="5" marker-end="url(#arrow-orange)"/>
+
+  <rect x="170" y="555" width="1260" height="92" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="260" y1="601" x2="1325" y2="601" stroke="#cbd5e1" stroke-width="4"/>
+
+  <circle cx="360" cy="601" r="21" fill="#eff6ff" stroke="#2563eb" stroke-width="4"/>
+  <text x="360" y="609" text-anchor="middle" class="code" font-size="22" font-weight="700" fill="#2563eb">0</text>
+  <text x="360" y="690" text-anchor="middle" class="small">读到旧值</text>
+
+  <circle cx="720" cy="601" r="21" fill="#fff7ed" stroke="#ea580c" stroke-width="4"/>
+  <text x="720" y="609" text-anchor="middle" class="code" font-size="22" font-weight="700" fill="#ea580c">1</text>
+  <text x="720" y="690" text-anchor="middle" class="small">自增写回</text>
+
+  <circle cx="1090" cy="601" r="21" fill="#f5f3ff" stroke="#7c3aed" stroke-width="4"/>
+  <text x="1090" y="609" text-anchor="middle" class="code" font-size="21" font-weight="700" fill="#7c3aed">=</text>
+  <text x="1090" y="690" text-anchor="middle" class="small">赋值写回旧值</text>
+
+  <path d="M381 601 C485 545 612 545 700 594" fill="none" stroke="#ea580c" stroke-width="5" marker-end="url(#arrow-orange)"/>
+  <path d="M381 601 C615 700 865 700 1069 610" fill="none" stroke="#7c3aed" stroke-width="5" marker-end="url(#arrow-purple)"/>
+
+  <rect x="170" y="745" width="360" height="92" rx="18" fill="#ffffff" stroke="#059669" stroke-width="3"/>
+  <text x="194" y="790" class="panel-title" fill="#059669">有顺序，才好判断</text>
+  <text x="194" y="820" class="small">先后关系明确，结果就能推出来</text>
+
+  <rect x="620" y="745" width="360" height="92" rx="18" fill="#ffffff" stroke="#dc2626" stroke-width="3"/>
+  <text x="644" y="790" class="panel-title" fill="#dc2626">没顺序，就是雷区</text>
+  <text x="644" y="820" class="code" font-size="20" fill="#64748b">i++ + i++</text>
+
+  <rect x="1070" y="745" width="360" height="92" rx="18" fill="#ffffff" stroke="#7c3aed" stroke-width="3"/>
+  <text x="1094" y="790" class="panel-title" fill="#7c3aed">C++17 收紧了规则</text>
+  <text x="1094" y="820" class="small">但不是所有表达式都变安全</text>
+
+  <path d="M530 791 C565 791 585 791 620 791" fill="none" stroke="#dc2626" stroke-width="5" marker-end="url(#arrow-red)"/>
+  <path d="M980 791 C1015 791 1035 791 1070 791" fill="none" stroke="#7c3aed" stroke-width="5" marker-end="url(#arrow-purple)"/>
+</svg>

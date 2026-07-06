@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<style>text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}</style>
+<marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#f7f9fc"/>
+
+<text x="800" y="108" font-size="54" font-weight="700" fill="#172033" text-anchor="middle">从 Hello World 到 ADL</text>
+<text x="800" y="155" font-size="28" font-weight="400" fill="#5b6475" text-anchor="middle">一次普通输出背后的名称查找、候选集与定制机制</text>
+
+<rect x="555" y="300" width="490" height="250" rx="34" fill="#111827" stroke="#111827" stroke-width="1"/>
+<text x="800" y="372" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">std::cout &lt;&lt; "Hello World"</text>
+<text x="800" y="426" font-size="30" font-weight="700" fill="#93c5fd" text-anchor="middle">operator&lt;&lt; 候选集</text>
+<text x="800" y="475" font-size="24" font-weight="400" fill="#cbd5e1" text-anchor="middle">普通查找 + ADL + 重载决议</text>
+
+<line x1="665" y1="314" x2="470" y2="246" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<rect x="115" y="190" width="360" height="155" rx="24" fill="#fff" stroke="#2563eb" stroke-width="3"/>
+<text x="295" y="238" font-size="27" font-weight="700" fill="#2563eb" text-anchor="middle">普通非限定查找</text>
+<text x="295" y="286" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">当前作用域链</text>
+<text x="295" y="318" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">using 声明 / 可见函数</text>
+
+<line x1="800" y1="300" x2="800" y2="250" stroke="#7c3aed" stroke-width="5" marker-end="url(#arrow-purple)"/>
+<rect x="610" y="190" width="380" height="120" rx="24" fill="#fff" stroke="#7c3aed" stroke-width="3"/>
+<text x="800" y="238" font-size="27" font-weight="700" fill="#7c3aed" text-anchor="middle">参数依赖查找</text>
+<text x="800" y="280" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">根据实参类型找到关联命名空间</text>
+
+<line x1="935" y1="314" x2="1125" y2="246" stroke="#059669" stroke-width="5" marker-end="url(#arrow-green)"/>
+<rect x="1125" y="190" width="360" height="155" rx="24" fill="#fff" stroke="#059669" stroke-width="3"/>
+<text x="1305" y="238" font-size="27" font-weight="700" fill="#059669" text-anchor="middle">关联命名空间</text>
+<text x="1305" y="286" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">std::ostream → std</text>
+<text x="1305" y="318" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">math::Complex → math</text>
+
+<line x1="665" y1="536" x2="530" y2="635" stroke="#0891b2" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<rect x="185" y="620" width="390" height="175" rx="24" fill="#fff" stroke="#0891b2" stroke-width="3"/>
+<text x="380" y="668" font-size="27" font-weight="700" fill="#0891b2" text-anchor="middle">最终重载决议</text>
+<text x="380" y="716" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">成员候选 / 非成员候选 / 内置候选</text>
+<text x="380" y="748" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">选出最佳匹配函数</text>
+
+<line x1="800" y1="550" x2="800" y2="625" stroke="#ea580c" stroke-width="5" marker-end="url(#arrow-orange)"/>
+<rect x="605" y="620" width="390" height="175" rx="24" fill="#fff" stroke="#ea580c" stroke-width="3"/>
+<text x="800" y="668" font-size="27" font-weight="700" fill="#ea580c" text-anchor="middle">定制点模式</text>
+<text x="800" y="716" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">swap / begin / CPO</text>
+<text x="800" y="748" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">把类型相关操作交给类型自己</text>
+
+<line x1="935" y1="536" x2="1070" y2="635" stroke="#7c3aed" stroke-width="5" marker-end="url(#arrow-purple)"/>
+<rect x="1025" y="620" width="390" height="175" rx="24" fill="#fff" stroke="#7c3aed" stroke-width="3"/>
+<text x="1220" y="668" font-size="27" font-weight="700" fill="#7c3aed" text-anchor="middle">tag_invoke</text>
+<text x="1220" y="716" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">统一 ADL 定制入口</text>
+<text x="1220" y="748" font-size="23" font-weight="400" fill="#5b6475" text-anchor="middle">用 tag 区分不同操作</text>
+
+<rect x="330" y="815" width="940" height="52" rx="18" fill="#fff7ed" stroke="#fed7aa" stroke-width="2"/>
+<text x="800" y="849" font-size="23" font-weight="400" fill="#ea580c" text-anchor="middle">核心线索：非限定调用让函数候选从“当前可见”扩展到“实参类型相关”</text>
+</svg>
