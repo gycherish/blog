@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      text {
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+        letter-spacing: 0;
+      }
+      .title { font-size: 52px; font-weight: 700; fill: #172033; }
+      .subtitle { font-size: 26px; fill: #5b6475; }
+      .lane-title { font-size: 30px; font-weight: 700; fill: #172033; }
+      .step { font-size: 25px; font-weight: 700; fill: #172033; }
+      .label { font-size: 21px; fill: #5b6475; }
+      .small { font-size: 19px; fill: #64748b; }
+      .inverse-label { font-size: 21px; fill: #cbd5e1; }
+      .code {
+        font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+        font-size: 24px;
+        font-weight: 700;
+      }
+    </style>
+    <filter id="shadow" x="-10%" y="-15%" width="120%" height="135%">
+      <feDropShadow dx="0" dy="9" stdDeviation="11" flood-color="#0f172a" flood-opacity="0.09"/>
+    </filter>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L11,4 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L11,4 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L11,4 z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+
+  <text x="800" y="90" text-anchor="middle" class="title">Happens Before</text>
+  <rect x="95" y="195" width="610" height="475" rx="26" fill="#ffffff" stroke="#dbe4f0" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="895" y="195" width="610" height="475" rx="26" fill="#ffffff" stroke="#dbe4f0" stroke-width="2" filter="url(#shadow)"/>
+
+  <rect x="95" y="195" width="610" height="76" rx="26" fill="#eff6ff"/>
+  <rect x="95" y="245" width="610" height="26" fill="#eff6ff"/>
+  <text x="400" y="243" text-anchor="middle" class="lane-title">生产者线程</text>
+
+  <rect x="895" y="195" width="610" height="76" rx="26" fill="#f5f3ff"/>
+  <rect x="895" y="245" width="610" height="26" fill="#f5f3ff"/>
+  <text x="1200" y="243" text-anchor="middle" class="lane-title">消费者线程</text>
+
+  <rect x="170" y="320" width="460" height="112" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="400" y="366" text-anchor="middle" class="step">准备普通数据</text>
+  <text x="400" y="405" text-anchor="middle" class="code" fill="#2563eb">data = 42;</text>
+
+  <rect x="170" y="510" width="460" height="112" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+  <text x="400" y="556" text-anchor="middle" class="step">发布完成状态</text>
+  <text x="400" y="595" text-anchor="middle" class="code" fill="#ea580c">ready.store(true, release);</text>
+
+  <path d="M400 432 L400 500" fill="none" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+  <rect x="440" y="452" width="195" height="38" rx="10" fill="#eff6ff"/>
+  <text x="538" y="478" text-anchor="middle" class="small" fill="#2563eb">sequenced-before</text>
+
+  <rect x="970" y="320" width="460" height="112" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="3"/>
+  <text x="1200" y="366" text-anchor="middle" class="step">接收到发布值</text>
+  <text x="1200" y="405" text-anchor="middle" class="code" fill="#7c3aed">ready.load(acquire) == true</text>
+
+  <rect x="970" y="510" width="460" height="112" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="3"/>
+  <text x="1200" y="556" text-anchor="middle" class="step">读取普通数据</text>
+  <text x="1200" y="595" text-anchor="middle" class="code" fill="#059669">use(data);  // reads 42</text>
+
+  <path d="M1200 432 L1200 500" fill="none" stroke="#059669" stroke-width="5" marker-end="url(#arrow-green)"/>
+  <rect x="1238" y="452" width="195" height="38" rx="10" fill="#ecfdf5"/>
+  <text x="1335" y="478" text-anchor="middle" class="small" fill="#059669">sequenced-before</text>
+
+  <path d="M640 566 C745 566 855 375 960 375" fill="none" stroke="#7c3aed" stroke-width="5" stroke-dasharray="13 10" marker-end="url(#arrow-purple)"/>
+  <rect x="670" y="420" width="260" height="72" rx="16" fill="#ffffff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="800" y="450" text-anchor="middle" class="label" fill="#7c3aed">synchronizes-with</text>
+  <text x="800" y="478" text-anchor="middle" class="small">acquire 确实读到 true</text>
+
+  <rect x="180" y="735" width="1240" height="108" rx="20" fill="#172033"/>
+  <text x="800" y="776" text-anchor="middle" class="inverse-label">传递性把三段关系合成一条 happens-before</text>
+  <text x="800" y="818" text-anchor="middle" class="code" font-size="22" fill="#ffffff">data write  -&gt;  release  -&gt;  acquire  -&gt;  data read</text>
+</svg>
