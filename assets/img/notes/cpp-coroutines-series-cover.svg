@@ -1,140 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="383" viewBox="0 0 900 383">
   <defs>
     <style>
       text {
         font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
         letter-spacing: 0;
       }
-      .code { font-family: "Cascadia Code", Consolas, "Courier New", monospace; }
+      .code {
+        font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+      }
     </style>
-    <filter id="shadow" x="-15%" y="-20%" width="130%" height="145%">
-      <feDropShadow dx="0" dy="9" stdDeviation="11" flood-color="#0f172a" flood-opacity="0.10"/>
+    <filter id="shadow" x="-10%" y="-12%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.10"/>
     </filter>
-    <marker id="arrow-green" markerWidth="11" markerHeight="11" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,8 L10,4 z" fill="#059669"/>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/>
     </marker>
-    <marker id="arrow-blue" markerWidth="11" markerHeight="11" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,8 L10,4 z" fill="#2563eb"/>
-    </marker>
-    <marker id="arrow-orange" markerWidth="11" markerHeight="11" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,8 L10,4 z" fill="#ea580c"/>
-    </marker>
-    <marker id="arrow-purple" markerWidth="11" markerHeight="11" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,8 L10,4 z" fill="#7c3aed"/>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ea580c"/>
     </marker>
   </defs>
 
-  <rect width="1600" height="900" fill="#f7f9fc"/>
+  <rect width="900" height="383" fill="#f7f9fc"/>
 
-  <text x="800" y="72" font-size="50" font-weight="700" fill="#172033" text-anchor="middle">C++ 协程定制 API</text>
-  <text x="800" y="115" font-size="24" fill="#5b6475" text-anchor="middle">编译器负责调用时机，类型作者决定具体行为</text>
+  <text x="450" y="43" font-size="31" font-weight="700" fill="#172033" text-anchor="middle">C++ 协程</text>
+  <text x="450" y="72" font-size="15" fill="#5b6475" text-anchor="middle">编译器负责调用时机，类型作者决定具体行为</text>
 
-  <!-- Promise protocol -->
-  <rect x="55" y="155" width="470" height="620" rx="28" fill="#ffffff" stroke="#d8e0ea" stroke-width="2" filter="url(#shadow)"/>
-  <rect x="55" y="155" width="470" height="82" rx="28" fill="#ecfdf5" stroke="#059669" stroke-width="3"/>
-  <text x="90" y="195" class="code" font-size="29" font-weight="700" fill="#047857">Promise</text>
-  <text x="90" y="224" font-size="17" fill="#64748b">控制整个协程的生命周期</text>
+  <!-- Promise -->
+  <rect x="24" y="96" width="260" height="230" rx="14" fill="#ffffff" stroke="#d8e0ea" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="24" y="96" width="260" height="52" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="43" y="121" class="code" font-size="18" font-weight="700" fill="#047857">Promise</text>
+  <text x="43" y="139" font-size="10.5" fill="#64748b">定制整个协程的生命周期</text>
 
-  <text x="90" y="277" font-size="17" font-weight="700" fill="#64748b">创建与启动</text>
-  <rect x="85" y="294" width="405" height="52" rx="13" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="105" y="327" class="code" font-size="18" font-weight="700" fill="#047857">get_return_object()</text>
-  <rect x="85" y="358" width="195" height="52" rx="13" fill="#eff6ff" stroke="#38bdf8" stroke-width="2"/>
-  <text x="182" y="391" class="code" font-size="17" font-weight="700" fill="#0369a1" text-anchor="middle">initial_suspend()</text>
-  <rect x="295" y="358" width="195" height="52" rx="13" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-  <text x="392" y="391" class="code" font-size="17" font-weight="700" fill="#c2410c" text-anchor="middle">final_suspend()</text>
+  <rect x="40" y="162" width="228" height="29" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.3"/>
+  <text x="154" y="181" class="code" font-size="11.5" font-weight="700" fill="#047857" text-anchor="middle">get_return_object()</text>
 
-  <text x="90" y="450" font-size="17" font-weight="700" fill="#64748b">结果、产值与异常</text>
-  <rect x="85" y="467" width="195" height="52" rx="13" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-  <text x="182" y="500" class="code" font-size="17" font-weight="700" fill="#1d4ed8" text-anchor="middle">return_value()</text>
-  <rect x="295" y="467" width="195" height="52" rx="13" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-  <text x="392" y="500" class="code" font-size="17" font-weight="700" fill="#1d4ed8" text-anchor="middle">return_void()</text>
-  <rect x="85" y="531" width="195" height="52" rx="13" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-  <text x="182" y="564" class="code" font-size="17" font-weight="700" fill="#047857" text-anchor="middle">yield_value()</text>
-  <rect x="295" y="531" width="195" height="52" rx="13" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
-  <text x="392" y="564" class="code" font-size="14" font-weight="700" fill="#b91c1c" text-anchor="middle">unhandled_exception()</text>
+  <rect x="40" y="201" width="108" height="29" rx="7" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.3"/>
+  <text x="94" y="220" class="code" font-size="9.3" font-weight="700" fill="#1d4ed8" text-anchor="middle">initial_suspend()</text>
+  <rect x="160" y="201" width="108" height="29" rx="7" fill="#fff7ed" stroke="#fb923c" stroke-width="1.3"/>
+  <text x="214" y="220" class="code" font-size="9.3" font-weight="700" fill="#c2410c" text-anchor="middle">final_suspend()</text>
 
-  <text x="90" y="623" font-size="17" font-weight="700" fill="#64748b">等待改写与内存</text>
-  <rect x="85" y="640" width="195" height="52" rx="13" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
-  <text x="182" y="673" class="code" font-size="16" font-weight="700" fill="#6d28d9" text-anchor="middle">await_transform()</text>
-  <rect x="295" y="640" width="195" height="52" rx="13" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-  <text x="392" y="673" class="code" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">operator new / delete</text>
+  <rect x="40" y="240" width="108" height="29" rx="7" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.3"/>
+  <text x="94" y="259" class="code" font-size="9.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">return_value()</text>
+  <rect x="160" y="240" width="108" height="29" rx="7" fill="#ecfdf5" stroke="#34d399" stroke-width="1.3"/>
+  <text x="214" y="259" class="code" font-size="9.5" font-weight="700" fill="#047857" text-anchor="middle">yield_value()</text>
 
-  <rect x="85" y="708" width="405" height="44" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-  <text x="287" y="736" class="code" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">get_return_object_on_allocation_failure()</text>
+  <rect x="40" y="279" width="108" height="29" rx="7" fill="#fef2f2" stroke="#f87171" stroke-width="1.3"/>
+  <text x="94" y="298" class="code" font-size="8.8" font-weight="700" fill="#b91c1c" text-anchor="middle">unhandled_exception()</text>
+  <rect x="160" y="279" width="108" height="29" rx="7" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.3"/>
+  <text x="214" y="298" class="code" font-size="9" font-weight="700" fill="#6d28d9" text-anchor="middle">await_transform()</text>
 
-  <!-- Compiler-owned lifecycle -->
-  <rect x="575" y="155" width="450" height="620" rx="32" fill="#111827" stroke="#111827" stroke-width="2" filter="url(#shadow)"/>
-  <rect x="620" y="185" width="200" height="38" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
-  <text x="720" y="211" font-size="16" font-weight="700" fill="#7dd3fc" text-anchor="middle">编译器编排生命周期</text>
+  <!-- Compiler lifecycle -->
+  <rect x="310" y="96" width="280" height="230" rx="14" fill="#111827" stroke="#111827" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="450" y="126" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">编译器编排生命周期</text>
+  <text x="450" y="145" font-size="10.5" fill="#94a3b8" text-anchor="middle">调用定制点，并保存跨挂起状态</text>
 
-  <rect x="650" y="250" width="300" height="53" rx="15" fill="#ecfdf5" stroke="#059669" stroke-width="3"/>
-  <text x="800" y="284" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">创建状态与 Promise</text>
+  <rect x="346" y="161" width="208" height="30" rx="7" fill="#ecfdf5" stroke="#34d399" stroke-width="1.5"/>
+  <text x="450" y="181" font-size="11.5" font-weight="700" fill="#047857" text-anchor="middle">创建状态与 Promise</text>
+  <line x1="450" y1="191" x2="450" y2="202" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-blue)"/>
 
-  <line x1="800" y1="303" x2="800" y2="334" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow-green)"/>
+  <rect x="346" y="207" width="208" height="30" rx="7" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="450" y="227" class="code" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="middle">initial_suspend()</text>
+  <line x1="450" y1="237" x2="450" y2="248" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-blue)"/>
 
-  <rect x="650" y="338" width="300" height="53" rx="15" fill="#f8fafc" stroke="#38bdf8" stroke-width="3"/>
-  <text x="800" y="372" class="code" font-size="20" font-weight="700" fill="#0369a1" text-anchor="middle">initial_suspend()</text>
+  <rect x="333" y="253" width="234" height="30" rx="7" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+  <text x="450" y="273" class="code" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">co_await · co_yield · co_return</text>
+  <line x1="450" y1="283" x2="450" y2="294" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-orange)"/>
 
-  <line x1="800" y1="391" x2="800" y2="422" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <rect x="346" y="299" width="208" height="20" rx="6" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="450" y="313" class="code" font-size="9.5" font-weight="700" fill="#c2410c" text-anchor="middle">final_suspend() → destroy</text>
 
-  <rect x="625" y="426" width="350" height="127" rx="18" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
-  <text x="800" y="462" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">执行函数体</text>
-  <rect x="647" y="480" width="98" height="45" rx="12" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
-  <text x="696" y="509" class="code" font-size="17" font-weight="700" fill="#c2410c" text-anchor="middle">co_await</text>
-  <rect x="751" y="480" width="98" height="45" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-  <text x="800" y="509" class="code" font-size="17" font-weight="700" fill="#047857" text-anchor="middle">co_yield</text>
-  <rect x="855" y="480" width="98" height="45" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-  <text x="904" y="509" class="code" font-size="17" font-weight="700" fill="#1d4ed8" text-anchor="middle">co_return</text>
+  <!-- Awaiter -->
+  <rect x="616" y="96" width="260" height="230" rx="14" fill="#ffffff" stroke="#d8e0ea" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="616" y="96" width="260" height="52" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="635" y="121" class="code" font-size="18" font-weight="700" fill="#1d4ed8">Awaiter</text>
+  <text x="635" y="139" font-size="10.5" fill="#64748b">定制一次等待怎样挂起与恢复</text>
 
-  <line x1="800" y1="553" x2="800" y2="584" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow-orange)"/>
+  <rect x="635" y="164" width="222" height="35" rx="8" fill="#ecfdf5" stroke="#34d399" stroke-width="1.5"/>
+  <text x="650" y="186" class="code" font-size="11.5" font-weight="700" fill="#047857">await_ready()</text>
+  <text x="840" y="186" font-size="10" fill="#64748b" text-anchor="end">是否就绪</text>
 
-  <rect x="650" y="588" width="300" height="53" rx="15" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
-  <text x="800" y="622" class="code" font-size="20" font-weight="700" fill="#c2410c" text-anchor="middle">final_suspend()</text>
+  <rect x="635" y="211" width="222" height="41" rx="8" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="650" y="229" class="code" font-size="11.5" font-weight="700" fill="#c2410c">await_suspend(handle)</text>
+  <text x="650" y="245" class="code" font-size="8.8" fill="#64748b">void / bool / coroutine_handle</text>
 
-  <line x1="800" y1="641" x2="800" y2="672" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow-purple)"/>
+  <rect x="635" y="264" width="222" height="35" rx="8" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="650" y="286" class="code" font-size="11.5" font-weight="700" fill="#1d4ed8">await_resume()</text>
+  <text x="840" y="286" font-size="10" fill="#64748b" text-anchor="end">产生结果</text>
 
-  <rect x="650" y="676" width="300" height="53" rx="15" fill="#f5f3ff" stroke="#7c3aed" stroke-width="3"/>
-  <text x="800" y="710" font-size="20" font-weight="700" fill="#6d28d9" text-anchor="middle">销毁状态并释放存储</text>
+  <rect x="635" y="307" width="222" height="13" rx="5" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1"/>
+  <text x="746" y="317" class="code" font-size="7.8" font-weight="700" fill="#6d28d9" text-anchor="middle">coroutine_handle: resume · destroy · promise</text>
 
-  <!-- Awaitable / Awaiter protocol -->
-  <rect x="1075" y="155" width="470" height="440" rx="28" fill="#ffffff" stroke="#d8e0ea" stroke-width="2" filter="url(#shadow)"/>
-  <rect x="1075" y="155" width="470" height="82" rx="28" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
-  <text x="1110" y="195" class="code" font-size="29" font-weight="700" fill="#1d4ed8">Awaiter</text>
-  <text x="1110" y="224" font-size="17" fill="#64748b">控制一次等待怎样挂起与恢复</text>
+  <!-- Relationships -->
+  <path d="M284 215 C295 215 299 207 310 207" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#arrow-blue)"/>
+  <path d="M590 253 C601 253 605 232 616 232" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#arrow-orange)"/>
 
-  <rect x="1110" y="265" width="400" height="44" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
-  <text x="1310" y="293" class="code" font-size="16" font-weight="700" fill="#6d28d9" text-anchor="middle">await_transform(expr) → operator co_await</text>
-  <text x="1310" y="331" font-size="15" fill="#64748b" text-anchor="middle">两步均为可选，最终得到 Awaiter</text>
-
-  <rect x="1110" y="353" width="400" height="53" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-  <text x="1135" y="386" class="code" font-size="18" font-weight="700" fill="#047857">await_ready()</text>
-  <text x="1480" y="386" font-size="16" fill="#64748b" text-anchor="end">结果已就绪？</text>
-
-  <line x1="1310" y1="406" x2="1310" y2="427" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow-blue)"/>
-
-  <rect x="1110" y="431" width="400" height="66" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-  <text x="1135" y="460" class="code" font-size="18" font-weight="700" fill="#c2410c">await_suspend(handle)</text>
-  <text x="1135" y="484" class="code" font-size="14" fill="#64748b">void / bool / coroutine_handle&lt;Z&gt;</text>
-
-  <line x1="1310" y1="497" x2="1310" y2="518" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow-blue)"/>
-
-  <rect x="1110" y="522" width="400" height="53" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-  <text x="1135" y="555" class="code" font-size="18" font-weight="700" fill="#1d4ed8">await_resume()</text>
-  <text x="1480" y="555" font-size="16" fill="#64748b" text-anchor="end">产生 co_await 的结果</text>
-
-  <!-- Handle protocol -->
-  <rect x="1075" y="625" width="470" height="150" rx="24" fill="#f5f3ff" stroke="#7c3aed" stroke-width="3" filter="url(#shadow)"/>
-  <text x="1110" y="668" class="code" font-size="24" font-weight="700" fill="#6d28d9">coroutine_handle&lt;Promise&gt;</text>
-  <text x="1110" y="700" font-size="16" fill="#64748b">外部控制与 Promise 访问</text>
-  <rect x="1110" y="722" width="400" height="36" rx="11" fill="#ffffff" stroke="#ddd6fe" stroke-width="2"/>
-  <text x="1310" y="746" class="code" font-size="16" font-weight="700" fill="#6d28d9" text-anchor="middle">resume() · destroy() · done() · promise()</text>
-
-  <!-- Cross-panel relationships -->
-  <path d="M525 320 C548 320 555 276 575 276" fill="none" stroke="#059669" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#arrow-green)"/>
-  <path d="M525 500 C548 500 555 489 575 489" fill="none" stroke="#2563eb" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#arrow-blue)"/>
-  <path d="M1025 489 C1048 489 1054 464 1075 464" fill="none" stroke="#ea580c" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#arrow-orange)"/>
-  <path d="M1310 625 L1310 596" fill="none" stroke="#7c3aed" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#arrow-purple)"/>
-
-  <rect x="245" y="815" width="1110" height="54" rx="17" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="800" y="849" font-size="18" fill="#475569" text-anchor="middle">Promise 定制整个协程，Awaiter 定制一次等待，句柄把控制权交给协程外部</text>
+  <!-- Summary -->
+  <rect x="100" y="344" width="700" height="27" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+  <text x="450" y="362" font-size="11.5" fill="#475569" text-anchor="middle">Promise 定制整个协程 · Awaiter 定制一次等待 · Handle 提供外部控制</text>
 </svg>
