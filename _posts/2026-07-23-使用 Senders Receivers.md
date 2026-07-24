@@ -2,7 +2,6 @@
 media_subpath: /assets/img/notes
 author: gycherish
 title: "使用 Senders/Receivers"
-slug: using-senders-receivers
 tags:
   - c++
   - concurrency
@@ -17,7 +16,7 @@ original_date: 2025-02
 
 > 译者说明：本文译自 Lucian Radu Teodorescu 发表于 ACCU *Overload* 185 的 [《Using Senders/Receivers》](https://accu.org/journals/overload/33/185/teodorescu/)。示例使用写作时的 NVIDIA stdexec，其中 `exec` 命名空间下的部分设施不属于 P2300R10，个别接口当时仍在标准化过程中。译文保留原文的版本语境和作者指出的已知问题，同时校正了代码中明显的拼写和标点错误，并收紧了少数过强的技术结论。
 
-本文是 [《Senders/Receivers 入门》](/blog/posts/senders-receivers-an-introduction/) 的续篇。上一篇介绍了即将进入 C++26 的 Senders/Receivers 框架，重点放在基本概念和标准化范围；这一篇将展示如何用它构建并发应用程序。
+本文是 [《Senders/Receivers 入门》](/blog/posts/Senders-Receivers-入门/) 的续篇。上一篇介绍了即将进入 C++26 的 Senders/Receivers 框架，重点放在基本概念和标准化范围；这一篇将展示如何用它构建并发应用程序。
 
 我们不再停留在最小示例，而是讨论三个更接近实际软件的问题：计算 Mandelbrot 分形、实现并发排序，以及批量读取图像、添加图形效果后写入另一个目录。这三类任务都能从多线程执行中获益。
 

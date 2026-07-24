@@ -2,7 +2,6 @@
 media_subpath: /assets/img/notes
 author: gycherish
 title: "Senders/Receivers 入门"
-slug: senders-receivers-an-introduction
 tags:
   - c++
   - concurrency
