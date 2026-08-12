@@ -14,7 +14,7 @@ date: 2026-08-12 21:00
 
 ## 问题是如何被发现的
 
-事情是这样的, 昨天我准备把一个原本只跑在 Linux 上的基于 C++23 标准的存储服务移植到 Windows 上。平台相关的代码补齐以后，编译过了，链接也过了。结果一跑测试，399 个用例挂了 17 个，进程中途还崩了一次。其中崩溃是因为编译源码依赖的 BLAKE3 库时选错了汇编变体，不过这和本文要聊的问题无关，不再详述。
+事情是这样的，昨天我准备把一个原本只跑在 Linux 上的基于 C++23 标准的存储服务移植到 Windows 上。平台相关的代码补齐以后，编译过了，链接也过了。结果一跑测试，399 个用例挂了 17 个，进程中途还崩了一次。其中崩溃是因为编译源码依赖的 BLAKE3 库时选错了汇编变体，不过这和本文要聊的问题无关，不再详述。
 
 把 BLAKE3 导致的问题解决后，开始认真研究 17 个运行失败的测试用例，其中有 13 个都把问题指向同一个方向：数据写入存储格式的文件后，解析器以写入时记录的大小读取时直接读到 EOF。
 
@@ -34,7 +34,7 @@ std::array<asio::const_buffer, 3> bufs = {
 co_await asio::async_write(file, bufs, use_sender);
 ```
 
-同样的代码在 Linux 上一直正常工作，结果在 Windows 上却稳定的留下空洞。怀疑对象也就从业务逻辑，一路跟到了平台相关的文件 I/O 实现。
+同样的代码在 Linux 上一直正常工作，结果在 Windows 上却稳定地留下空洞。怀疑对象也就从业务逻辑，一路跟到了平台相关的文件 I/O 实现。
 
 考虑到直接在存储服务里调试这种问题太麻烦（懂的都懂）。因此，我单独写了个示例程序，先确保 Asio 的实现没有问题：
 
@@ -88,7 +88,7 @@ int main()
 }
 ```
 
-本次移植使用的是 MSYS2 下的 MinGW64 工具链，在 MYSY2 的 MinGW64 Shell 环境下编译执行，结果如下：
+本次移植使用的是 MSYS2 下的 MinGW64 工具链，在 MSYS2 的 MinGW64 Shell 环境下编译执行，结果如下：
 
 ```bash
 $ g++ -std=c++23 -I/d/repo/asio-github/include -DASIO_HAS_FILE test.cpp -lws2_32 -lmswsock -lstdc++exp -static -o test
@@ -102,7 +102,7 @@ reported 44, on disk 72 (expected 44)
 
 为了看看到底写了什么，我用十六进制工具打开文件（Windows 下推荐 [ImHex](https://imhex.werwolv.net/)），内容很直白：开头是 16 个 `'A'`，中间夹着 28 个零字节，然后是 28 个 `'B'`。基于我对 Asio 的熟悉程度，我这里没有实际进行调试，顺着调用链翻了下 Asio 的源码，基本就确定问题原因了：
 
-`asio::stream_file` 提供的是流式接口，文件的读写偏移由 Asio 内部实现维护，保存在  `win_iocp_file_service::implementation_type::offset_` 里。[`win_iocp_file_service.hpp`](https://github.com/chriskohlhoff/asio/blob/8806a6803cde7054c3049d3666d3ec36786568c5/include/asio/detail/win_iocp_file_service.hpp) 的 185 行在投递异步 IO 操作前先取出当前位置，再按照整个 Buffer Sequence 的大小推进 `offset_`。
+`asio::stream_file` 提供的是流式接口，文件的读写偏移由 Asio 内部实现维护，保存在 `win_iocp_file_service::implementation_type::offset_` 里。[`win_iocp_file_service.hpp`](https://github.com/chriskohlhoff/asio/blob/8806a6803cde7054c3049d3666d3ec36786568c5/include/asio/detail/win_iocp_file_service.hpp) 的 185 行在投递异步 IO 操作前先取出当前位置，再按照整个 Buffer Sequence 的大小推进 `offset_`。
 
 ```cpp
 uint64_t offset = impl.offset_;
@@ -110,7 +110,7 @@ impl.offset_ += asio::buffer_size(buffers);
 handle_service_.async_write_some_at(impl, offset, buffers, handler, io_ex);
 ```
 
-无论怎么看，这段代码都没什么问题。虽然调用方传进来一组 Buffer，但是 API 的语义是明确的，即这组 Buffer 是以整体的形式完成或失败(严格来讲还有部分成功的情况)。因此，内部实现提前以操作完成来推进 `offset_` 并没有什么问题。
+无论怎么看，这段代码都没什么问题。虽然调用方传进来一组 Buffer，但是 API 的语义是明确的，即这组 Buffer 是以整体的形式完成或失败（严格来讲还有部分成功的情况）。因此，内部实现提前以操作完成来推进 `offset_` 并没有什么问题。
 
 但是 [`win_iocp_handle_service.hpp`](https://github.com/chriskohlhoff/asio/blob/8806a6803cde7054c3049d3666d3ec36786568c5/include/asio/detail/win_iocp_handle_service.hpp) 的 173 行在收到整个序列以后，却只取第一个非空 Buffer 交给 `start_write_op`：
 
@@ -149,19 +149,19 @@ Windows 普通的 `WriteFile` 和 `ReadFile` 每次只接收一块连续缓冲�
 
 回到上面的 `asio::async_write` 的问题，Linux 对应的实现在 [io_uring_descriptor_service](https://github.com/chriskohlhoff/asio/blob/8806a6803cde7054c3049d3666d3ec36786568c5/include/asio/detail/io_uring_descriptor_service.hpp) 的 330 行：
 
-```c++
+```cpp
 start_op(impl, io_uring_service::write_op, p.p, is_continuation,
   buffer_sequence_adapter<asio::const_buffer,
     ConstBufferSequence>::all_empty(buffers));
 ```
 
-可以看到，Linux 这边投递 IO 请求时是把所有的 Buffer 都带上了，而不是像 Windows 那样只投递第一个。我猜测，这跟 Windows 的非 Direct 文件 IO 不支持 Scatter-Gather I/O 有关，导致 Asio 的作者再做出妥协的同时忽视了对偏移的处理（也可能作者清楚的知道问题所在而故意不处理，毕竟想使用 Asio 的异步 IO 功能需要现实开启 ASIO_HAS_FILE 宏定义，并且一次投递多块 Buffer 的场景并不是很多）。
+可以看到，Linux 这边投递 IO 请求时是把所有的 Buffer 都带上了，而不是像 Windows 那样只投递第一个。我猜测，这跟 Windows 的非 Direct 文件 IO 不支持 Scatter-Gather I/O 有关，导致 Asio 的作者在做出妥协的同时忽视了对偏移的处理（也可能作者清楚地知道问题所在而故意不处理，毕竟想使用 Asio 的异步 IO 功能需要显式开启 ASIO_HAS_FILE 宏定义，并且一次投递多块 Buffer 的场景并不是很多）。
 
 ## 影响范围
 
 上文贴出的都是异步文件 IO 的相关的代码，实际上同步 IO 也存在这个问题，具体原理类似，不再详述，有兴趣的可以自己看代码。
 
-截止到 2026 年 8 月 12 日，这个问题在官方代码中依然没有解决。因此，为了规避这个问题，应用层可以通过避免一次投递多块 Buffer 来规避这个问题。
+截至 2026 年 8 月 12 日，这个问题在官方代码中依然没有解决。因此，为了规避这个问题，应用层可以通过避免一次投递多块 Buffer 来规避这个问题。
 
 ## 解决方案
 
