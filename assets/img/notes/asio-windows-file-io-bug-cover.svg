@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="383" viewBox="0 0 900 383">
+  <defs>
+    <style>
+      text {
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+        letter-spacing: 0;
+      }
+      .code {
+        font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+      }
+    </style>
+    <filter id="shadow" x="-10%" y="-12%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="383" fill="#f7f9fc"/>
+
+  <text x="450" y="43" font-size="31" font-weight="700" fill="#172033" text-anchor="middle">Asio 异步文件 IO</text>
+  <text x="450" y="72" font-size="15" fill="#5b6475" text-anchor="middle">Windows 文件后端的偏移量 BUG 修复</text>
+
+  <!-- Before: incorrect offset accounting -->
+  <rect x="24" y="96" width="260" height="230" rx="14" fill="#ffffff" stroke="#d8e0ea" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="24" y="96" width="260" height="52" rx="14" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="43" y="121" font-size="18" font-weight="700" fill="#b91c1c">BUG</text>
+  <text x="43" y="139" font-size="10.5" fill="#64748b">按整个 buffer sequence 提前记账</text>
+
+  <text x="40" y="174" class="code" font-size="10" fill="#64748b">offset = 0</text>
+  <rect x="40" y="185" width="76" height="42" rx="7" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="78" y="210" class="code" font-size="12" font-weight="700" fill="#1d4ed8" text-anchor="middle">A · 16</text>
+  <rect x="116" y="185" width="74" height="42" rx="7" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="153" y="203" class="code" font-size="10.5" font-weight="700" fill="#c2410c" text-anchor="middle">GAP</text>
+  <text x="153" y="217" class="code" font-size="9" fill="#c2410c" text-anchor="middle">28 bytes</text>
+  <rect x="190" y="185" width="78" height="42" rx="7" fill="#ecfdf5" stroke="#34d399" stroke-width="1.5"/>
+  <text x="229" y="210" class="code" font-size="12" font-weight="700" fill="#047857" text-anchor="middle">B · 28</text>
+
+  <line x1="40" y1="246" x2="268" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="40" y1="240" x2="40" y2="252" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="116" y1="240" x2="116" y2="252" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="190" y1="240" x2="190" y2="252" stroke="#dc2626" stroke-width="2"/>
+  <line x1="268" y1="240" x2="268" y2="252" stroke="#64748b" stroke-width="1.5"/>
+  <text x="40" y="267" class="code" font-size="9" fill="#64748b" text-anchor="middle">0</text>
+  <text x="116" y="267" class="code" font-size="9" fill="#64748b" text-anchor="middle">16</text>
+  <text x="190" y="267" class="code" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">44</text>
+  <text x="268" y="267" class="code" font-size="9" fill="#64748b" text-anchor="middle">72</text>
+
+  <rect x="40" y="284" width="228" height="27" rx="7" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.2"/>
+  <text x="154" y="302" class="code" font-size="10.5" font-weight="700" fill="#b91c1c" text-anchor="middle">offset_ += buffer_size(buffers)</text>
+
+  <!-- Fix: account for the submitted buffer -->
+  <rect x="310" y="96" width="280" height="230" rx="14" fill="#111827" stroke="#111827" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="450" y="126" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">修正偏移量记账</text>
+  <text x="450" y="145" font-size="10.5" fill="#94a3b8" text-anchor="middle">位置只前进本次真正提交的长度</text>
+
+  <rect x="338" y="165" width="224" height="38" rx="8" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="450" y="189" class="code" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">first(buffers).size()</text>
+
+  <line x1="450" y1="203" x2="450" y2="222" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <rect x="338" y="228" width="224" height="42" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+  <text x="450" y="246" class="code" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">async_write_some</text>
+  <text x="450" y="261" font-size="9.5" fill="#94a3b8" text-anchor="middle">允许短写 · 组合操作继续推进</text>
+
+  <line x1="450" y1="270" x2="450" y2="289" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <rect x="363" y="295" width="174" height="24" rx="7" fill="#ecfdf5" stroke="#34d399" stroke-width="1.5"/>
+  <text x="450" y="312" font-size="10.5" font-weight="700" fill="#047857" text-anchor="middle">同步与异步读写共修四处</text>
+
+  <!-- After: contiguous file layout -->
+  <rect x="616" y="96" width="260" height="230" rx="14" fill="#ffffff" stroke="#d8e0ea" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="616" y="96" width="260" height="52" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="635" y="121" font-size="18" font-weight="700" fill="#047857">FIXED</text>
+  <text x="635" y="139" font-size="10.5" fill="#64748b">多 buffer 数据连续落盘</text>
+
+  <text x="635" y="174" class="code" font-size="10" fill="#64748b">offset = 0</text>
+  <rect x="635" y="185" width="82" height="42" rx="7" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="676" y="210" class="code" font-size="12" font-weight="700" fill="#1d4ed8" text-anchor="middle">A · 16</text>
+  <rect x="717" y="185" width="140" height="42" rx="7" fill="#ecfdf5" stroke="#34d399" stroke-width="1.5"/>
+  <text x="787" y="210" class="code" font-size="12" font-weight="700" fill="#047857" text-anchor="middle">B · 28</text>
+
+  <line x1="635" y1="246" x2="857" y2="246" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="635" y1="240" x2="635" y2="252" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="717" y1="240" x2="717" y2="252" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="857" y1="240" x2="857" y2="252" stroke="#64748b" stroke-width="1.5"/>
+  <text x="635" y="267" class="code" font-size="9" fill="#64748b" text-anchor="middle">0</text>
+  <text x="717" y="267" class="code" font-size="9" fill="#64748b" text-anchor="middle">16</text>
+  <text x="857" y="267" class="code" font-size="9" font-weight="700" fill="#059669" text-anchor="middle">44</text>
+
+  <rect x="635" y="284" width="222" height="27" rx="7" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.2"/>
+  <text x="746" y="302" class="code" font-size="10.5" font-weight="700" fill="#047857" text-anchor="middle">reported 44 · on disk 44</text>
+
+  <!-- Flow arrows -->
+  <path d="M284 212 C296 212 299 212 310 212" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#arrow-blue)"/>
+  <path d="M590 212 C602 212 605 212 616 212" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#arrow-green)"/>
+
+  <!-- Summary -->
+  <rect x="100" y="344" width="700" height="27" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+  <text x="450" y="362" font-size="11.5" fill="#475569" text-anchor="middle">Asio · BUG 修复 · 异步文件 IO · Windows IOCP</text>
+</svg>
